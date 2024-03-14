@@ -2,6 +2,9 @@
 {
     public class Bank
     {
+        // Loged In Account
+        Account activeAccount = null;
+
         // Open JSON
         public void OpenJSON()
         {
