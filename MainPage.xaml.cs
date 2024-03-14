@@ -9,9 +9,11 @@
             InitializeComponent();
         }
 
-        private void OnCounterClicked(object sender, EventArgs e)
+        private async void AccountSearch(object sender, EventArgs e)
         {
-            
+
+            await Navigation.PushAsync(new SearchAcc());
+
         }
     }
 

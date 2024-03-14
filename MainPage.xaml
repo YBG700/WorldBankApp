@@ -24,6 +24,7 @@
                 <BoxView WidthRequest="0" HorizontalOptions="FillAndExpand" />
 
                 <Button Text="Search Account: "
+                        Clicked="AccountSearch"
                         FontSize = "Body"
                         x:Name="BtnSearchAccount"
                         HorizontalOptions="End" />
