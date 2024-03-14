@@ -12,7 +12,31 @@
             FontSize="Medium"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
-        
-        
+
+        <Entry
+            
+            Placeholder="Enter your account ID:"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            
+            />
+
+        <Button 
+            Text="Submit"
+            FontSize="Body"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            
+            />
+
+        <ImageButton 
+            Source="point.png"
+            WidthRequest="50"
+            HeightRequest="50"
+            VerticalOptions="End"
+            HorizontalOptions="Start"
+            Clicked="BtnBackClicked"
+            
+            />
     </VerticalStackLayout>
 </ContentPage>

@@ -57,6 +57,7 @@
 
 	<ItemGroup>
 	  <None Remove="Resources\Images\bag_of_money.png" />
+	  <None Remove="Resources\Images\point.png" />
 	</ItemGroup>
 
 	<ItemGroup>
