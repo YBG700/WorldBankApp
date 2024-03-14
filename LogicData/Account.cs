@@ -21,9 +21,11 @@
             _currBal = 0;
         }
 
-        // Check ACC NUM
-
         // Check PIN
+        public bool CheckPIN()
+        {
+            return false;
+        }
     }
 
     class SavingsAccount : Account
