@@ -20,6 +20,10 @@
             _accEmail = email;
             _currBal = 0;
         }
+
+        // Check ACC NUM
+
+        // Check PIN
     }
 
     class SavingsAccount : Account
