@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WorldBankApp.SearchAcc"
+             Background="AliceBlue"
+             Title="Search For Your Account">
+    
+    <VerticalStackLayout>
+        <Label 
+            Text="Please Enter your Account Number!"
+            FontAttributes="Italic"
+            FontSize="Medium"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+        <Entry
+            
+            Placeholder="Enter your account ID:"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            
+            />
+
+        <Button 
+            Text="Submit"
+            FontSize="Body"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            
+            />
+
+        <ImageButton 
+            Source="point.png"
+            WidthRequest="50"
+            HeightRequest="50"
+            VerticalOptions="End"
+            HorizontalOptions="Start"
+            Clicked="BtnBackClicked"
+            
+            />
+    </VerticalStackLayout>
+</ContentPage>
