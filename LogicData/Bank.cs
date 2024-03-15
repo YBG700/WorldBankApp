@@ -1,14 +1,32 @@
-﻿namespace WorldBankApp.LogicData
+﻿using Android.Views;
+using System;
+using System.IO;
+using System.Text.Json;
+
+namespace WorldBankApp.LogicData
 {
     public class Bank
     {
+        // Account Data
+        static List<Account> bankDatabase;
+
         // Loged In Account
         Account activeAccount = null;
 
-        // Open JSON
-        public void OpenJSON()
+        public static void Main(string[] args)
         {
 
+            // Open and Read JSON Data
+            string filePath = "LogicData/BankDatabase.json";
+
+            try
+            {
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"An error occurred: {ex.Message}");
+            }
         }
 
         // Save JSON
