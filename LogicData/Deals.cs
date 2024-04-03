@@ -1,6 +1,6 @@
 ﻿namespace WorldBankApp.LogicData
 {
-    internal class Deals
+    public class Deals
     {
 
     }

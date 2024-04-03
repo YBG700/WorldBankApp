@@ -13,7 +13,7 @@
         private Deals _activeDeal;
 
         // Constructor
-        public Account(int accNum, int accPin, string holderName, long phoneNum, string email)
+        public Account(int accNum, int accPin, string holderName, long phoneNum, string email, Deals activeDeal)
         {
             _accNum = accNum;
             _accPin = accPin;
@@ -22,6 +22,7 @@
             _accEmail = email;
             _currBal = 0;
             _monthlyFee = 15;
+            _activeDeal = activeDeal;
         }
 
         // Getters - Setters
