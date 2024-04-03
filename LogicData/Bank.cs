@@ -116,31 +116,51 @@ namespace WorldBankApp.LogicData
         // Withdraw
         public void Withdraw(int withdraw)
         {
-            switch (activeAccount)
+            // Savings Acount
+            if (activeAccount is SavingsAccount)
             {
-                case Account:
-                    if (activeAccount.CurrBal > 0 && (activeAccount.CurrBal - withdraw) > 0)
-                    {
-                        activeAccount.CurrBal -= withdraw;
-                    }
-                    else
-                    {
-                        throw new ArgumentException("Not enough funds.");
-                    }
-                    break;
+                // Checks if the current balance is greator than the required minium and if the withdraw does not go below the minimum.
+                if (activeAccount.CurrBal > activeAccount.MinBal && (activeAccount.CurrBal - withdraw) >= activeAccount.MinBal)
+                {
+                    activeAccount.CurrBal -= withdraw;
+                }
+                else
+                {
+                    throw new ArgumentException("Not enough funds, going below required Minimum Balance.");
+                }
+            }
 
-                case SavingsAccount:
-                    if (activeAccount.CurrBal < activeAccount.MinBal)
-                    {
+            // Chequing Account
+            else if (activeAccount is ChequingAccount)
+            {
+                if (activeAccount.CurrBal < 0)
+                {
 
-                    }
-                    break;
+                }
+                else
+                {
+                    throw new ArgumentException("Not enough funds, surpassed Overdraft Limit.");
+                }
+            }
 
-                case ChequingAccount:
-                    break;
+            // Base Account
+            else if (activeAccount is Account)
+            {
+                // Checks if the current balance is greator than 0, and the withdraw does not go below zero.
+                if (activeAccount.CurrBal > 0 && (activeAccount.CurrBal - withdraw) >= 0)
+                {
+                    activeAccount.CurrBal -= withdraw;
+                }
+                else
+                {
+                    throw new ArgumentException("Not enough funds.");
+                }
+            }
 
-                default:
-                    throw new ArgumentException("");
+            // Unknown Account Type
+            else
+            {
+                throw new ArgumentException("An Error has Occurred.");
             }
         }
 
