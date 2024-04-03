@@ -10,10 +10,10 @@
         private string _accEmail;
         private double _currBal;
         private double _monthlyFee;
-        private Deals _activeDeal;
+        private Deals? _activeDeal;
 
         // Constructor
-        public Account(int accNum, int accPin, string holderName, long phoneNum, string email, double fee, Deals activeDeal)
+        public Account(int accNum, int accPin, string holderName, long phoneNum, string email, double fee, Deals? activeDeal)
         {
             _accNum = accNum;
             _accPin = accPin;
@@ -94,7 +94,7 @@
         private double _minBal;
 
         // Constructor
-        public SavingsAccount(int minBal, int accNum, int accPin, string holderName, long phoneNum, string email, double fee, Deals activeDeal)
+        public SavingsAccount(int minBal, int accNum, int accPin, string holderName, long phoneNum, string email, double fee, Deals? activeDeal)
             : base(accNum, accPin, holderName, phoneNum, email, fee, activeDeal)
         {
             _minBal = minBal;
@@ -114,7 +114,7 @@
         private double _overDraftLimit;
 
         // Constructor
-        public ChequingAccount(int overDraftLimit, int accNum, int accPin, string holderName, long phoneNum, string email, double fee, Deals activeDeal)
+        public ChequingAccount(int overDraftLimit, int accNum, int accPin, string holderName, long phoneNum, string email, double fee, Deals? activeDeal)
             : base(accNum, accPin, holderName, phoneNum, email, fee, activeDeal)
         {
             _overDraftLimit = overDraftLimit;

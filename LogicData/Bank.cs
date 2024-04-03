@@ -21,8 +21,8 @@ namespace WorldBankApp.LogicData
 
             try
             {
-                Account acc1 = new Account(10000, 1111, "John Doe", 1112223333, "johndoe@test.com");
-                SavingsAccount acc2 = new SavingsAccount(1000, 10001, 1234, "Jane Doe", 9059451111, "doeJane@tester.ca");
+                Account acc1 = new Account(10000, 1111, "John Doe", 1112223333, "johndoe@test.com", 15.50, null);
+                SavingsAccount acc2 = new SavingsAccount(1000, 10001, 1234, "Jane Doe", 9059451111, "doeJane@tester.ca", 10.99, null);
 
                 bankDatabase.Add(acc1);
                 bankDatabase.Add(acc2);
