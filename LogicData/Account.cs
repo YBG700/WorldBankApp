@@ -62,7 +62,7 @@
             set { _monthlyFee = value; }
         }
 
-        public Deals ActiveDeal
+        public Deals? ActiveDeal
         {
             get { return _activeDeal; }
             set { _activeDeal = value; }
