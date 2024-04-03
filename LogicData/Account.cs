@@ -61,12 +61,14 @@
         // Virtual Methods
         public virtual int MinBal 
         { 
-            get { return 0; } 
+            get { return 0; }
+            set { }
         }
 
         public virtual int OverdraftLimit
         {
             get { return 0; }
+            set { }
         }
     }
 
