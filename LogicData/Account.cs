@@ -56,6 +56,18 @@
             set { _currBal = value; }
         }
 
+        public double MonthlyFee
+        {
+            get { return _monthlyFee; }
+            set { _monthlyFee = value; }
+        }
+
+        public Deals ActiveDeal
+        {
+            get { return _activeDeal; }
+            set { _activeDeal = value; }
+        }
+
         // Check PIN
         public bool CheckPIN(int inputPin)
         {
