@@ -108,15 +108,40 @@ namespace WorldBankApp.LogicData
         }
 
         // Deposit
-        public void Deposit()
+        public void Deposit(int deposit)
         {
-
+            activeAccount.CurrBal += deposit;
         }
 
         // Withdraw
-        public void Withdraw()
+        public void Withdraw(int withdraw)
         {
+            switch (activeAccount)
+            {
+                case Account:
+                    if (activeAccount.CurrBal > 0 && (activeAccount.CurrBal - withdraw) > 0)
+                    {
+                        activeAccount.CurrBal -= withdraw;
+                    }
+                    else
+                    {
+                        throw new ArgumentException("Not enough funds.");
+                    }
+                    break;
 
+                case SavingsAccount:
+                    if (activeAccount.CurrBal < activeAccount.MinBal)
+                    {
+
+                    }
+                    break;
+
+                case ChequingAccount:
+                    break;
+
+                default:
+                    throw new ArgumentException("");
+            }
         }
 
         // Check deals
