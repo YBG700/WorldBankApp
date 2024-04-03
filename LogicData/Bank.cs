@@ -172,6 +172,22 @@ namespace WorldBankApp.LogicData
             }
         }
 
-        // Check deals
+        public List<Deals>? CheckDeals()
+        {
+            // Shows the deals to the user;
+
+            // Two Approaches:
+            // 1. Show all deals
+            // 2. Show only valid deals to specific user
+
+            return null;
+        }
+
+        public Deals? GetActiveDeal()
+        {
+            // Check Active Deal
+
+            return null;
+        }
     }
 }
