@@ -8,7 +8,9 @@
         private string _accHolderName;
         private long _accPhoneNum;
         private string _accEmail;
-        private int _currBal;
+        private double _currBal;
+        private double _monthlyFee;
+        private Deals _activeDeal;
 
         // Constructor
         public Account(int accNum, int accPin, string holderName, long phoneNum, string email)
@@ -19,6 +21,7 @@
             _accPhoneNum = phoneNum;
             _accEmail = email;
             _currBal = 0;
+            _monthlyFee = 15;
         }
 
         // Getters - Setters
@@ -46,7 +49,7 @@
             set { _accEmail = value; }
         }
 
-        public int CurrBal
+        public double CurrBal
         {
             get { return _currBal; }
             set { _currBal = value; }
@@ -59,13 +62,13 @@
         }
 
         // Virtual Methods
-        public virtual int MinBal 
+        public virtual double MinBal 
         { 
             get { return 0; }
             set { }
         }
 
-        public virtual int OverdraftLimit
+        public virtual double OverdraftLimit
         {
             get { return 0; }
             set { }
@@ -75,7 +78,7 @@
     public class SavingsAccount : Account
     {
         // Savings Account
-        private int _minBal;
+        private double _minBal;
 
         // Constructor
         public SavingsAccount(int minBal, int accNum, int accPin, string holderName, long phoneNum, string email)
@@ -85,7 +88,7 @@
         }
 
         // Getters - Setters
-        public override int MinBal
+        public override double MinBal
         {
             get { return _minBal; }
             set { _minBal = value; }
@@ -95,7 +98,7 @@
     public class ChequingAccount : Account
     {
         // Chequing Account
-        private int _overDraftLimit;
+        private double _overDraftLimit;
 
         // Constructor
         public ChequingAccount(int overDraftLimit, int accNum, int accPin, string holderName, long phoneNum, string email)
@@ -105,7 +108,7 @@
         }
 
         // Getters - Setters
-        public override int OverdraftLimit
+        public override double OverdraftLimit
         {
             get { return _overDraftLimit; }
             set { _overDraftLimit = value; }
