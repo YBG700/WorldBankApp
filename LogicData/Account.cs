@@ -57,6 +57,17 @@
         {
             return _accPin == inputPin;
         }
+
+        // Virtual Methods
+        public virtual int MinBal 
+        { 
+            get { return 0; } 
+        }
+
+        public virtual int OverdraftLimit
+        {
+            get { return 0; }
+        }
     }
 
     public class SavingsAccount : Account
@@ -72,7 +83,7 @@
         }
 
         // Getters - Setters
-        public int MinBal
+        public override int MinBal
         {
             get { return _minBal; }
             set { _minBal = value; }
@@ -92,7 +103,7 @@
         }
 
         // Getters - Setters
-        public int OverdraftLimit
+        public override int OverdraftLimit
         {
             get { return _overDraftLimit; }
             set { _overDraftLimit = value; }
