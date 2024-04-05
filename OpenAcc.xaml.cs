@@ -6,4 +6,11 @@ public partial class OpenAcc : ContentPage
 	{
 		InitializeComponent();
 	}
+
+
+    private async void BtnBackClicked(object sender, EventArgs e)
+    {
+        await Navigation.PopAsync(); // Use PopAsync to navigate back to the previous page
+    }
+
 }
