@@ -67,9 +67,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="OpenAcc.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
 	  <MauiXaml Update="SearchAcc.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
