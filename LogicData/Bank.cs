@@ -126,7 +126,7 @@ namespace WorldBankApp.LogicData
                 // Savings Acount
                 if (activeAccount is SavingsAccount)
                 {
-                    // Checks if the current balance is greator than the required minium and if the withdraw does not go below the minimum.
+                    // Checks if the current balance is greater than the required minium and if the withdraw does not go below the minimum.
                     if (activeAccount.CurrBal > activeAccount.MinBal && (activeAccount.CurrBal - withdraw) >= activeAccount.MinBal)
                     {
                         activeAccount.CurrBal -= withdraw;
@@ -153,7 +153,7 @@ namespace WorldBankApp.LogicData
                 // Base Account
                 else if (activeAccount is Account)
                 {
-                    // Checks if the current balance is greator than 0, and the withdraw does not go below zero.
+                    // Checks if the current balance is greater than 0, and the withdraw does not go below zero.
                     if (activeAccount.CurrBal > 0 && (activeAccount.CurrBal - withdraw) >= 0)
                     {
                         activeAccount.CurrBal -= withdraw;
