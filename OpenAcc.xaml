@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WorldBankApp.OpenAcc"
+             Title="OpenAcc">
+    <VerticalStackLayout>
+
+
+        <StackLayout  Orientation="Horizontal" Spacing="50"
+           
+           
+        <Button 
+         Text="Chequings Account
+         FontSize="Body"
+         VerticalOptions="Center"
+         HorizontalOptions="Center"
+         />
+
+         <Button
+          Text ="Savings Account"
+          FontSize ="Body"
+          VerticalOptions ="Center"
+          HorizontalOptions ="Center" 
+             />
+
+        </StackLayout>
+
+        <ImageButton 
+          Source="point.png"
+          WidthRequest="50"
+          HeightRequest="50"
+          VerticalOptions="End"
+          HorizontalOptions="Start"
+         Clicked="BtnBackClicked"
+     
+     />
+    </VerticalStackLayout>
+</ContentPage>
