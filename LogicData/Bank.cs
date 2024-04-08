@@ -10,6 +10,9 @@ namespace WorldBankApp.LogicData
         // Account Data
         static List<Account> bankDatabase = new List<Account>();
 
+        // Deal Data
+        static List<Deals> dealDatabase = new List<Deals>();
+
         // Loged In Account
         Account? activeAccount = null;
 
@@ -140,9 +143,9 @@ namespace WorldBankApp.LogicData
                 // Chequing Account
                 else if (activeAccount is ChequingAccount)
                 {
-                    if (activeAccount.CurrBal < 0)
+                    if (activeAccount.CurrBal > (0 - activeAccount.OverdraftLimit) && (activeAccount.CurrBal - withdraw) > (0 - activeAccount.OverdraftLimit))
                     {
-
+                        activeAccount.CurrBal -= withdraw;
                     }
                     else
                     {
