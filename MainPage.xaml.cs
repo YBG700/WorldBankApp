@@ -1,12 +1,15 @@
-﻿namespace WorldBankApp
+﻿using WorldBankApp.LogicData;
+
+namespace WorldBankApp
 {
     public partial class MainPage : ContentPage
     {
-        
+        Bank bank = new Bank();
 
         public MainPage()
         {
             InitializeComponent();
+            bank.InitialLoad();
         }
 
         private async void AccountOpen(object sender, EventArgs e)
