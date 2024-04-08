@@ -7,6 +7,20 @@ public partial class OpenAcc : ContentPage
 		InitializeComponent();
 	}
 
+    //Navigates to ChequingAccount Creation Page
+    private void ChequingAcc(Object sender, EventArgs e) 
+    { 
+    
+        
+    }
+
+    //Navigates to SavingAccount Creation Page
+    private void SavingAcc(Object sender, EventArgs e)
+    {
+
+
+    }
+
 
     private async void BtnBackClicked(object sender, EventArgs e)
     {
