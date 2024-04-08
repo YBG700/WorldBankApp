@@ -1,0 +1,16 @@
+namespace WorldBankApp;
+
+public partial class CreateAcc : ContentPage
+{
+	public CreateAcc()
+	{
+		InitializeComponent();
+	}
+
+    private async void BtnBackClicked(object sender, EventArgs e)
+    {
+        await Navigation.PopAsync(); // Use PopAsync to navigate back to the previous page
+    }
+
+    
+}

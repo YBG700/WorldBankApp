@@ -10,17 +10,20 @@
             Orientation="Horizontal" 
             Spacing="50">
 
-            <Button
+         <Button
              Text="Chequings Account"
              FontSize="Body"
              VerticalOptions="Center"
-             HorizontalOptions="Center"/>
+             HorizontalOptions="Center"
+             Clicked="ChequingAcc"
+             />
 
-        <Button
+         <Button
             Text ="Savings Account"
             FontSize ="Body"
             VerticalOptions ="Center"
-            HorizontalOptions ="Center"/>
+            HorizontalOptions ="Center"
+             />
 
         </StackLayout>
 

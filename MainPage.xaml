@@ -17,7 +17,9 @@
             <StackLayout Orientation="Horizontal" Spacing="50">
                 <Button Text="Open Account: "
                         x:Name="BtnOpenAccount"
-                        HorizontalOptions="Start" />
+                        HorizontalOptions="Start"
+                        Clicked="AccountOpen"
+                        />
 
 
                 <BoxView WidthRequest="0" HorizontalOptions="FillAndExpand" />

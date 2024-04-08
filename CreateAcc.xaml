@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WorldBankApp.CreateAcc"
+             Title="Creating Account">
+    <VerticalStackLayout>
+        <Label 
+            Text="Account Type: Chequing Account"
+            VerticalOptions="Start" 
+            HorizontalOptions="Center" 
+            />
+
+        <Entry
+           Placeholder="Enter Your Name"
+           HorizontalOptions="Start"
+            
+            />
+
+        <Entry
+           Placeholder="Enter Your PIN. ex (1234)"
+           HorizontalOptions="Start"
+            />
+
+        <Entry
+         Placeholder="Enter email: @Yahoo.com"
+         HorizontalOptions="Start"
+        />
+
+        <Entry
+           Placeholder="Enter Phone Number (must be 10 digits)"
+           HorizontalOptions="Start"
+        />
+
+        <Button  
+            Text="Submit"
+            HorizontalOptions="End"
+            WidthRequest="100"
+            HeightRequest="100"  
+            />
+
+
+
+
+
+        <ImageButton 
+         Source="point.png"
+         WidthRequest="50"
+         HeightRequest="50"
+         VerticalOptions="End"
+         HorizontalOptions="Start"
+         Clicked="BtnBackClicked"
+            />
+        
+    </VerticalStackLayout>
+</ContentPage>

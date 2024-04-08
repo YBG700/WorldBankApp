@@ -67,6 +67,15 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Update="CreateAcc.xaml.cs">
+	    <DependentUpon>CreateAcc.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="CreateAcc.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="SearchAcc.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
