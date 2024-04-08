@@ -11,7 +11,7 @@ public partial class OpenAcc : ContentPage
     private async void ChequingAcc(Object sender, EventArgs e) 
     {
 
-        await Navigation.PushAsync(new ChequingAcc());//Navigates to Search Account Page
+        await Navigation.PushAsync(new CreateAcc());//Navigates to Search Account Page
 
     }
 

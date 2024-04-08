@@ -1,8 +1,8 @@
 namespace WorldBankApp;
 
-public partial class ChequingAcc : ContentPage
+public partial class CreateAcc : ContentPage
 {
-	public ChequingAcc()
+	public CreateAcc()
 	{
 		InitializeComponent();
 	}
@@ -12,5 +12,5 @@ public partial class ChequingAcc : ContentPage
         await Navigation.PopAsync(); // Use PopAsync to navigate back to the previous page
     }
 
-
+    
 }
