@@ -13,7 +13,7 @@ namespace WorldBankApp.LogicData
         // Loged In Account
         Account? activeAccount = null;
 
-        public static void Main(string[] args)
+        public void InitialLoad()
         {
 
             // Open and Read JSON Data
