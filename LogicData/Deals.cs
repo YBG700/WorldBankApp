@@ -1,5 +1,6 @@
 ﻿namespace WorldBankApp.LogicData
 {
+    // Enum
     public enum DealEnum
     {
         StudentSavings,
@@ -11,9 +12,10 @@
     {
         public string dealName;
         public string dealDesc;
-        public int dealLength;
+        public int dealLength; // Months
         public DealEnum type;
 
+        // Constructor
         public Deals(string name, string desc, int length, DealEnum dealType)
         {
             dealName = name;

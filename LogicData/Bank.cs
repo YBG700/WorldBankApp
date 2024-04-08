@@ -29,6 +29,10 @@ namespace WorldBankApp.LogicData
 
                 bankDatabase.Add(acc1);
                 bankDatabase.Add(acc2);
+
+                Deals deal1 = new Deals("Student Savings", "Special offer for students. No monthly interest payments for the duration of their academic term.", 48, DealEnum.StudentSavings);
+
+                dealDatabase.Add(deal1);
             }
             catch (Exception ex)
             {
