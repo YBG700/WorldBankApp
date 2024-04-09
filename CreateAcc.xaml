@@ -5,7 +5,7 @@
              Title="Creating Account">
     <VerticalStackLayout>
         <Label 
-            Text="Account Type: Chequing Account"
+            Text="Creating Account"
             VerticalOptions="Start" 
             HorizontalOptions="Center" 
             />
