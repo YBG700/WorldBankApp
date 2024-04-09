@@ -2,12 +2,69 @@ namespace WorldBankApp;
 
 public partial class CreateAcc : ContentPage
 {
+
+    private string name;
+    private string pin;
+    private string email;
+    private string phone;
 	public CreateAcc(string choice)
 	{
 		InitializeComponent();
         DecisionLabel.Text += choice;
+        string _account = DecisionLabel.Text;
 	}
 
+    private async void BtnSubmit1(object sender, EventArgs e) 
+    {
+        name = Name.Text;
+        pin = PIN.Text;
+        email = Email.Text;
+        phone = PhoneNumber.Text;
+
+        
+        if (string.IsNullOrEmpty(name))
+        {
+            await DisplayAlert("NAME", "PLEASE ENTER YOUR NAME", "OK");
+            return; 
+        }
+
+        
+        if (string.IsNullOrEmpty(pin))
+        {
+            await DisplayAlert("PIN", "PLEASE ENTER A PIN NUMBER!", "OK");
+            return; 
+        }
+
+        if (string.IsNullOrEmpty(email))
+        {
+            await DisplayAlert("EMAIL", "PLEASE ENTER A Valid EMAIL", "OK");
+            return;
+        }
+
+
+        if (!int.TryParse(pin, out _) || pin.Length != 4)
+        {
+            await DisplayAlert("PIN", "PIN MUST BE A 4-DIGIT NUMBER!", "OK");
+            return; 
+        }
+
+        if(email.Contains("@") == false) 
+        {
+            await DisplayAlert("EMAIL", "MUST BE A VALID EMAIL!", "OK");
+            return;
+        }
+
+        if (!int.TryParse(phone, out _) || phone.Length < 10)
+        {
+            await DisplayAlert("PHONE NUMBER", "HAVE ATLEAST 10 DIGITS!", "OK");
+            return;
+        }
+
+    }
+
+ 
+
+    
     private async void BtnBackClicked(object sender, EventArgs e)
     {
         await Navigation.PopAsync(); // Use PopAsync to navigate back to the previous page

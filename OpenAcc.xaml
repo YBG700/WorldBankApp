@@ -36,6 +36,7 @@
             FontSize ="Body"
             VerticalOptions ="Center"
             HorizontalOptions ="End"
+            Clicked="SavingAcc"
              />
 
         </StackLayout>

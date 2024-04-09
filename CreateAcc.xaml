@@ -31,22 +31,31 @@
         <Entry
            Placeholder="Enter Your Name"
            HorizontalOptions="Start"
+           x:Name="Name"
+           TextColor="White"
+           
             
             />
 
         <Entry
            Placeholder="Enter Your PIN. ex (1234)"
            HorizontalOptions="Start"
+           x:Name="PIN"
+           TextColor="White"
             />
 
         <Entry
          Placeholder="Enter email: @Yahoo.com"
          HorizontalOptions="Start"
+         x:Name="Email"
+         TextColor="White"
         />
 
         <Entry
            Placeholder="Enter Phone Number (must be 10 digits)"
            HorizontalOptions="Start"
+           x:Name="PhoneNumber"
+           TextColor="White"
         />
 
         <Button  
@@ -54,6 +63,7 @@
             HorizontalOptions="End"
             WidthRequest="100"
             HeightRequest="100"  
+            Clicked="BtnSubmit1"
             />
 
 
