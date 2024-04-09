@@ -2,8 +2,19 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="WorldBankApp.OpenAcc"
-             Title="OpenAcc">
+             Title="Open Your Account"
+             BackgroundColor="Black">
+    
     <VerticalStackLayout>
+
+        <Label
+            
+            Text="Please Select Your Account"
+            HorizontalOptions="Center"
+            FontSize="Header"
+            TextColor="White"
+            
+            />
 
 
         <StackLayout
@@ -14,15 +25,18 @@
              Text="Chequings Account"
              FontSize="Body"
              VerticalOptions="Center"
-             HorizontalOptions="Center"
+             HorizontalOptions="Start"
              Clicked="ChequingAcc"
              />
+
+            <BoxView WidthRequest="0" HorizontalOptions="FillAndExpand" />
 
          <Button
             Text ="Savings Account"
             FontSize ="Body"
             VerticalOptions ="Center"
-            HorizontalOptions ="Center"
+            HorizontalOptions ="End"
+            Clicked="SavingAcc"
              />
 
         </StackLayout>
