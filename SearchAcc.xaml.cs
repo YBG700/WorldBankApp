@@ -12,7 +12,10 @@ namespace WorldBankApp
             await Navigation.PopAsync(); // Use PopAsync to navigate back to the previous page
         }
 
-        //Submit Button?
+        public void SubmitBtn(object sender, EventArgs e)
+        {
+
+        }
 
     }
 }

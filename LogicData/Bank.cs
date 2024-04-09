@@ -217,9 +217,50 @@ namespace WorldBankApp.LogicData
         public void ChargeFee(Account acc)
         {
             DateTime currentDate = DateTime.Now;
+
+            // Checks if its a new month
             if (currentDate.Month != acc.LastFeeDate.Month)
             {
-                acc.CurrBal -= acc.MonthlyFee;
+                // Checks if Account has deal which reduces or removes monthly fee OR adds interest
+                if (acc.ActiveDeal != null)
+                {
+                    if (acc.ActiveDeal.type == DealEnum.StudentSavings)
+                    {
+                        // If account has StudentSavings deal
+                        acc.LastFeeDate = DateTime.Now;
+                    }
+                    else if (acc.ActiveDeal.type == DealEnum.CreditPlus)
+                    {
+                        // If account has CreditPlus deal
+                        acc.CurrBal -= (acc.MonthlyFee / 2);
+                        acc.LastFeeDate = currentDate;
+                    }
+                    else if (acc.ActiveDeal.type == DealEnum.Interest555)
+                    {
+                        // If account has Interest555 deal
+                        acc.CurrBal -= acc.MonthlyFee;
+                        acc.LastFeeDate = currentDate;
+
+                        AddInterest(acc);
+                    }
+                }
+                else
+                {
+                    // If account has no active deal
+                    acc.CurrBal -= acc.MonthlyFee;
+                    acc.LastFeeDate = currentDate;
+                }
+            }
+        }
+
+        // Add Monthly Interest
+        public void AddInterest(Account acc)
+        {
+            // Checks if Active Deal is Interest555
+            if (acc.ActiveDeal != null && acc.ActiveDeal.type == DealEnum.Interest555)
+            {
+                // Adds 5.55% interest to current balance
+                acc.CurrBal += (acc.CurrBal * (5.55 / 100));
             }
         }
 
