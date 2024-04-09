@@ -219,7 +219,7 @@ namespace WorldBankApp.LogicData
             DateTime currentDate = DateTime.Now;
             if (currentDate.Month != acc.LastFeeDate.Month)
             {
-
+                acc.CurrBal -= acc.MonthlyFee;
             }
         }
 
