@@ -60,6 +60,7 @@
 
         <Button  
             Text="Submit"
+            x:Name="SubmitBtn"
             HorizontalOptions="End"
             WidthRequest="100"
             HeightRequest="100"  
@@ -69,15 +70,27 @@
 
 
 
-
-        <ImageButton 
-         Source="point.png"
-         WidthRequest="50"
-         HeightRequest="50"
-         VerticalOptions="End"
-         HorizontalOptions="Start"
-         Clicked="BtnBackClicked"
+        <StackLayout Orientation="Horizontal" Spacing="50">
+            <ImageButton 
+             Source="point.png"
+             WidthRequest="50"
+             HeightRequest="50"
+             VerticalOptions="End"
+             HorizontalOptions="Start"
+             Clicked="BtnBackClicked"
             />
-        
+
+            <BoxView WidthRequest="0" HorizontalOptions="FillAndExpand" />
+            <Label 
+                Text=""
+                TextColor="White"
+                FontAttributes="Bold"
+                HorizontalOptions="Center"
+                x:Name="Details"
+                />
+
+
+        </StackLayout>
+
     </VerticalStackLayout>
 </ContentPage>

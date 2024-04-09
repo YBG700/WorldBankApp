@@ -7,7 +7,11 @@ public partial class CreateAcc : ContentPage
     private string pin;
     private string email;
     private string phone;
-	public CreateAcc(string choice)
+    private int balance;
+    private int accNumber;
+
+    Random random = new Random();
+    public CreateAcc(string choice)
 	{
 		InitializeComponent();
         DecisionLabel.Text += choice;
@@ -60,10 +64,37 @@ public partial class CreateAcc : ContentPage
             return;
         }
 
+
+        SubmitBtn.IsEnabled = false;
+        balance = random.Next(0, 1001);
+        accNumber = random.Next(100000, 1000000);
+
+        Button newButton = new Button
+        {
+            Text = $"Your Account Number:{accNumber} \n Your balance: {balance}",
+            VerticalOptions = LayoutOptions.End,
+            HorizontalOptions = LayoutOptions.Center
+
+
+        };
+
+        // Set up event handler for button click
+        newButton.Clicked += newButtonClicked;
+
+
+        // Add the button to the content of the page
+        Content = newButton;
+
     }
 
- 
 
+
+    private async void newButtonClicked(object sender, EventArgs e) 
+    {
+
+        await Navigation.PushAsync(new MainPage());
+
+    }
     
     private async void BtnBackClicked(object sender, EventArgs e)
     {
