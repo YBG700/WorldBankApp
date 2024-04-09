@@ -10,6 +10,7 @@
         private string _accEmail;
         private double _currBal;
         private double _monthlyFee;
+        private DateTime _lastFeeDate;
         private Deals? _activeDeal;
 
         // Constructor
@@ -23,6 +24,7 @@
             _currBal = 0;
             _monthlyFee = fee;
             _activeDeal = activeDeal;
+            _lastFeeDate = DateTime.Now;
         }
 
         // Getters - Setters
@@ -60,6 +62,12 @@
         {
             get { return _monthlyFee; }
             set { _monthlyFee = value; }
+        }
+
+        public DateTime LastFeeDate
+        {
+            get { return _lastFeeDate; }
+            set { _lastFeeDate = value; }
         }
 
         public Deals? ActiveDeal

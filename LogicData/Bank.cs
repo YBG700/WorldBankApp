@@ -30,6 +30,11 @@ namespace WorldBankApp.LogicData
                 bankDatabase.Add(acc1);
                 bankDatabase.Add(acc2);
 
+                foreach (Account acc in bankDatabase)
+                {
+                    ChargeFee(acc);
+                }
+
                 Deals deal1 = new Deals("Student Savings", "Special offer for students. No monthly interest payments for the duration of their academic term.", 48, DealEnum.StudentSavings);
 
                 dealDatabase.Add(deal1);
@@ -110,6 +115,35 @@ namespace WorldBankApp.LogicData
             return null;
         }
 
+        // Create Account
+        public void CreateAccount(int type)
+        {
+            // 1 = Basic Account
+            // 2 = Savings Account
+            // 3 = Chequing Account
+
+            switch (type)
+            {
+                case 1:
+                    // Basic Account
+                    //Account acc = new Account();
+                    //bankDatabase.Add(acc);
+                    break;
+                case 2:
+                    // Savings Account
+                    //SavingsAccount savAcc = new SavingsAccount();
+                    //bankDatabase.Add(acc);
+                    break;
+                case 3:
+                    // Chequing Account
+                    //ChequingAccount cheAcc = new ChequingAccount();
+                    //bankDatabase.Add(acc);
+                    break;
+                default:
+                    throw new ArgumentException("An Error has occurred.");
+            }
+        }
+
         // Edit Account
         public void EditAccount()
         {
@@ -179,6 +213,17 @@ namespace WorldBankApp.LogicData
             }
         }
 
+        // Charge Monthly Fee
+        public void ChargeFee(Account acc)
+        {
+            DateTime currentDate = DateTime.Now;
+            if (currentDate.Month != acc.LastFeeDate.Month)
+            {
+
+            }
+        }
+
+        // Display Deal
         public List<Deals>? CheckDeals()
         {
             // Shows the deals to the user;
@@ -190,11 +235,10 @@ namespace WorldBankApp.LogicData
             return null;
         }
 
+        // Get Active Deal for Account
         public Deals? GetActiveDeal()
         {
-            // Check Active Deal
-
-            return null;
+            return activeAccount.ActiveDeal;
         }
     }
 }
