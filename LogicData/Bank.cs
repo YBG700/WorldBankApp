@@ -238,7 +238,11 @@ namespace WorldBankApp.LogicData
         // Get Active Deal for Account
         public Deals? GetActiveDeal()
         {
-            return activeAccount.ActiveDeal;
+            if (activeAccount != null)
+            {
+                return activeAccount.ActiveDeal;
+            }
+            return null;
         }
     }
 }
