@@ -2,13 +2,31 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="WorldBankApp.CreateAcc"
-             Title="Creating Account">
+             Title="Creating Account"
+             BackgroundColor="Black">
+
     <VerticalStackLayout>
+
         <Label 
             Text="Creating Account"
             VerticalOptions="Start" 
             HorizontalOptions="Center" 
+            FontSize="Header"
+            TextColor="White"
             />
+
+        <Label 
+             Text=""
+             x:Name="DecisionLabel"
+             VerticalOptions="Start" 
+             HorizontalOptions="Center" 
+             FontAttributes="Italic"
+             TextColor="White"
+         />
+
+
+
+
 
         <Entry
            Placeholder="Enter Your Name"
