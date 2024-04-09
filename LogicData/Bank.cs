@@ -10,10 +10,13 @@ namespace WorldBankApp.LogicData
         // Account Data
         static List<Account> bankDatabase = new List<Account>();
 
+        // Deal Data
+        static List<Deals> dealDatabase = new List<Deals>();
+
         // Loged In Account
         Account? activeAccount = null;
 
-        public static void Main(string[] args)
+        public void InitialLoad()
         {
 
             // Open and Read JSON Data
@@ -26,6 +29,15 @@ namespace WorldBankApp.LogicData
 
                 bankDatabase.Add(acc1);
                 bankDatabase.Add(acc2);
+
+                foreach (Account acc in bankDatabase)
+                {
+                    ChargeFee(acc);
+                }
+
+                Deals deal1 = new Deals("Student Savings", "Special offer for students. No monthly interest payments for the duration of their academic term.", 48, DealEnum.StudentSavings);
+
+                dealDatabase.Add(deal1);
             }
             catch (Exception ex)
             {
@@ -103,6 +115,35 @@ namespace WorldBankApp.LogicData
             return null;
         }
 
+        // Create Account
+        public void CreateAccount(int type)
+        {
+            // 1 = Basic Account
+            // 2 = Savings Account
+            // 3 = Chequing Account
+
+            switch (type)
+            {
+                case 1:
+                    // Basic Account
+                    //Account acc = new Account();
+                    //bankDatabase.Add(acc);
+                    break;
+                case 2:
+                    // Savings Account
+                    //SavingsAccount savAcc = new SavingsAccount();
+                    //bankDatabase.Add(acc);
+                    break;
+                case 3:
+                    // Chequing Account
+                    //ChequingAccount cheAcc = new ChequingAccount();
+                    //bankDatabase.Add(acc);
+                    break;
+                default:
+                    throw new ArgumentException("An Error has occurred.");
+            }
+        }
+
         // Edit Account
         public void EditAccount()
         {
@@ -140,9 +181,9 @@ namespace WorldBankApp.LogicData
                 // Chequing Account
                 else if (activeAccount is ChequingAccount)
                 {
-                    if (activeAccount.CurrBal < 0)
+                    if (activeAccount.CurrBal > (0 - activeAccount.OverdraftLimit) && (activeAccount.CurrBal - withdraw) > (0 - activeAccount.OverdraftLimit))
                     {
-
+                        activeAccount.CurrBal -= withdraw;
                     }
                     else
                     {
@@ -172,6 +213,17 @@ namespace WorldBankApp.LogicData
             }
         }
 
+        // Charge Monthly Fee
+        public void ChargeFee(Account acc)
+        {
+            DateTime currentDate = DateTime.Now;
+            if (currentDate.Month != acc.LastFeeDate.Month)
+            {
+                acc.CurrBal -= acc.MonthlyFee;
+            }
+        }
+
+        // Display Deal
         public List<Deals>? CheckDeals()
         {
             // Shows the deals to the user;
@@ -183,10 +235,13 @@ namespace WorldBankApp.LogicData
             return null;
         }
 
+        // Get Active Deal for Account
         public Deals? GetActiveDeal()
         {
-            // Check Active Deal
-
+            if (activeAccount != null)
+            {
+                return activeAccount.ActiveDeal;
+            }
             return null;
         }
     }
