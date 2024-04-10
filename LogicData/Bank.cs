@@ -85,7 +85,7 @@ namespace WorldBankApp.LogicData
                     else
                     {
                         // Pin is Invalid
-                        throw new ArgumentException("Invalid Pin.");
+                        throw new ArgumentException("Incorrect Pin.");
                     }
                 }
                 else
