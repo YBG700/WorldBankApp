@@ -2,34 +2,45 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="WorldBankApp.MainPage"
-             Title="World Bank">
+             Title="">
 
 
     <ScrollView>
-        <VerticalStackLayout Padding="30,0" Spacing="25">
-            <Label Text="Welcome to World Bank"
-                   Style="{StaticResource Headline}"
-                   SemanticProperties.HeadingLevel="Level1"
-                   FontAttributes="Italic"
-                   FontSize="Header" />
+        
+        <VerticalStackLayout 
+            Margin="20"
+            Spacing="10"
+            HorizontalOptions="Center">
+            
+            <Label 
+                Text="World Bank"
+                Style="{StaticResource Headline}"
+                FontSize="50" />
 
-            <StackLayout Orientation="Horizontal" Spacing="50">
+            <Label 
+                Text="Exploiting your money since 1756."
+                FontAttributes="Italic"
+                HorizontalTextAlignment="Center"
+                FontSize="18"/>
+
+            <VerticalStackLayout 
+                Spacing="20"
+                Margin="70">
+                
                 <Button Text="Create Account"
                         x:Name="BtnOpenAccount"
-                        HorizontalOptions="Start"
                         Clicked="AccountOpen"
-                        />
-
-
-                <BoxView WidthRequest="0" HorizontalOptions="FillAndExpand" /> <!-- What the fuck does this do? LMAOOOOOOO -->
+                        WidthRequest="250"/>
 
                 <Button Text="Log In"
                         Clicked="AccountSearch"
-                        FontSize = "Body"
                         x:Name="BtnSearchAccount"
-                        HorizontalOptions="End" />
+                        WidthRequest="250"/>
 
-            </StackLayout>
+            </VerticalStackLayout>
+            
         </VerticalStackLayout>
+        
     </ScrollView>
+    
 </ContentPage>
