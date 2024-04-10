@@ -2,6 +2,7 @@
 using System;
 using System.IO;
 using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace WorldBankApp.LogicData
 {
@@ -16,19 +17,34 @@ namespace WorldBankApp.LogicData
         // Loged In Account
         Account? activeAccount = null;
 
+        // JSON Filepath
+        string filePath = "LogicData/BankDatabase.json";
+
         public void InitialLoad()
         {
 
             // Open and Read JSON Data
-            string filePath = "LogicData/BankDatabase.json";
-
             try
             {
-                Account acc1 = new Account(10000, 1111, "John Doe", 1112223333, "johndoe@test.com", 15.50, null);
-                SavingsAccount acc2 = new SavingsAccount(1000, 10001, 1234, "Jane Doe", 9059451111, "doeJane@tester.ca", 10.99, null);
+                if (File.Exists(filePath))
+                {
+                    // Load JSON
+                    LoadJSON();
+                }
+                else
+                {
+                    // If File does not exist, create basic objects
+                    Account acc1 = new Account(10000, 1111, "John Doe", 1112223333, "johndoe@test.com", 15.50, null);
+                    SavingsAccount acc2 = new SavingsAccount(1000, 10001, 1234, "Jane Doe", 9059451111, "doeJane@tester.ca", 10.99, null);
 
-                bankDatabase.Add(acc1);
-                bankDatabase.Add(acc2);
+                    bankDatabase.Add(acc1);
+                    bankDatabase.Add(acc2);
+                }
+
+                // Basic Deal Object
+                Deals deal1 = new Deals("Student Savings", "Special offer for students. No monthly fees for the duration of their academic term.", 48, DealEnum.StudentSavings);
+                dealDatabase.Add(deal1);
+
 
                 // Sorts the list by account number
                 bankDatabase.Sort((x, y) => x.AccNum.CompareTo(y.AccNum));
@@ -39,9 +55,8 @@ namespace WorldBankApp.LogicData
                     ChargeFee(acc);
                 }
 
-                Deals deal1 = new Deals("Student Savings", "Special offer for students. No monthly fees for the duration of their academic term.", 48, DealEnum.StudentSavings);
-
-                dealDatabase.Add(deal1);
+                // Save JSON
+                SaveJSON();
             }
             catch (Exception ex)
             {
@@ -49,10 +64,52 @@ namespace WorldBankApp.LogicData
             }
         }
 
+        // Load JSON
+        public void LoadJSON()
+        {
+            try
+            {
+                // Read JSON data from file
+                string jsonString = File.ReadAllText(filePath);
+
+                // Assign Serializer Options
+                var options = new JsonSerializerOptions
+                {
+                    // Set reference handling to preserve to handle polymorphism
+                    ReferenceHandler = ReferenceHandler.Preserve
+                };
+
+                // Assign deserialized list to bankDatabase
+                bankDatabase = JsonSerializer.Deserialize<List<Account>>(jsonString, options);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"An error occurred during initialization: {ex.Message}");
+            }
+        }
+
         // Save JSON
         public void SaveJSON()
         {
+            try
+            {
+                // Assign Serializer Options
+                var options = new JsonSerializerOptions
+                {
+                    // Set reference handling to preserve for polymorphic serialization
+                    ReferenceHandler = ReferenceHandler.Preserve,
+                };
 
+                // Serialize bankDatabase into a String
+                string jsonString = JsonSerializer.Serialize(bankDatabase, options);
+
+                // Write jsonString to file, Complete Overwrite
+                File.WriteAllText(filePath, jsonString);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"An error occurred during saving: {ex.Message}");
+            }
         }
 
         // Create Account
@@ -60,16 +117,19 @@ namespace WorldBankApp.LogicData
         {
             Account acc = new Account(accNum, accPin, holderName, phoneNum, email, fee, deal);
             bankDatabase.Add(acc);
+            SaveJSON();
         }
         public void CreateSavingsAccount(int minBal, int accNum, int accPin, string holderName, long phoneNum, string email, double fee, Deals? deal)
         {
             SavingsAccount acc = new SavingsAccount(minBal, accNum, accPin, holderName, phoneNum, email, fee, deal);
             bankDatabase.Add(acc);
+            SaveJSON();
         }
         public void CreateChequingAccount(int overDraftLimit, int accNum, int accPin, string holderName, long phoneNum, string email, double fee, Deals? deal)
         {
             ChequingAccount acc = new ChequingAccount(overDraftLimit, accNum, accPin, holderName, phoneNum, email, fee, deal);
             bankDatabase.Add(acc);
+            SaveJSON();
         }
 
         // Log into Account
@@ -158,6 +218,7 @@ namespace WorldBankApp.LogicData
             {
                 activeAccount.CurrBal += deposit;
             }
+            SaveJSON();
         }
 
         // Withdraw
@@ -212,6 +273,7 @@ namespace WorldBankApp.LogicData
                     throw new ArgumentException("An Error has Occurred.");
                 }
             }
+            SaveJSON();
         }
 
         // Charge Monthly Fee
