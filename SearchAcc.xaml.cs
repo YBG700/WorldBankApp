@@ -28,6 +28,7 @@ namespace WorldBankApp
                     if (PinEntry.Text != "" && int.TryParse(PinEntry.Text, out int accPin))
                     {
                         bankMgr.LoginAccount(accNum, accPin);
+                        OpenAccountPage();
                     }
                     else
                     {
@@ -44,6 +45,11 @@ namespace WorldBankApp
                 // Displays Error messages from Bank.cs
                 DisplayAlert("Warning", ex.Message, "OK");
             }
+        }
+
+        public async void OpenAccountPage()
+        {
+            await Navigation.PushAsync(new AccountPage(bankMgr));
         }
     }
 }
