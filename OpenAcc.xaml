@@ -4,53 +4,52 @@
              x:Class="WorldBankApp.OpenAcc"
              Title="">
     
-    <VerticalStackLayout>
+    <VerticalStackLayout
+        Margin="20"
+        Spacing="10">
 
         <Label
-            
-            Text="Select the type of account you want to open:"
+            Text="New Account"
             HorizontalOptions="Center"
-            FontSize="Header"
-            TextColor="White"/>
+            FontSize="Header"/>
 
-
-        <StackLayout
-            Orientation="Horizontal" 
-            Spacing="50"
+        <VerticalStackLayout
+            Spacing="20"
+            Margin="30"
             HorizontalOptions="Center">
 
+            <Label
+                Text="Select the type of account you want to open:"
+                HorizontalOptions="Center"
+                FontSize="20"/>
+
             <Button
-                Text ="Basic Account"
-                FontSize ="Body"
-                VerticalOptions ="Center"
-                HorizontalOptions ="End"
+                Text="Basic Account"
+                FontSize="Body"
+                WidthRequest="250"
                 Clicked="BasicAcc"
                 />
 
             <Button
                 Text="Chequings Account"
                 FontSize="Body"
-                VerticalOptions="Center"
-                HorizontalOptions="Start"
+                WidthRequest="250"
                 Clicked="ChequingAcc"
                 />
 
             <Button
                 Text ="Savings Account"
                 FontSize ="Body"
-                VerticalOptions ="Center"
-                HorizontalOptions ="End"
+                WidthRequest="250"
                 Clicked="SavingAcc"
                 />
 
-        </StackLayout>
+        </VerticalStackLayout>
 
         <ImageButton 
             Source="point.png"
             WidthRequest="50"
             HeightRequest="50"
-            VerticalOptions="End"
-            HorizontalOptions="Start"
             Clicked="BtnBackClicked"/>
         
     </VerticalStackLayout>

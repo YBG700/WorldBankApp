@@ -106,19 +106,24 @@
             
         </Grid>
 
-        <Button  
-            Text="Submit"
-            x:Name="SubmitBtn"
-            Clicked="BtnSubmit1"
-            HorizontalOptions="Center"/>
+        <StackLayout
+            Spacing="20">
+            
+            <Button  
+                Text="Submit"
+                x:Name="SubmitBtn"
+                Clicked="BtnSubmit1"
+                WidthRequest="200"/>
 
-        <ImageButton 
-            Source="point.png"
-            WidthRequest="50"
-            HeightRequest="50"
-            Clicked="BtnBackClicked"
-            />
-
+            <ImageButton 
+                Source="point.png"
+                WidthRequest="50"
+                HeightRequest="50"
+                Clicked="BtnBackClicked"
+                />
+            
+        </StackLayout>
+        
     </VerticalStackLayout>
     
 </ContentPage>
