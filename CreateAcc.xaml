@@ -4,87 +4,121 @@
              x:Class="WorldBankApp.CreateAcc"
              Title="">
 
-    <HorizontalStackLayout
-        HorizontalOptions="Center">
-        
-        <VerticalStackLayout>
+    <VerticalStackLayout
+        HorizontalOptions="Center"
+        Margin="20"
+        Spacing="10">
 
-            <Label 
-                Text="Creating Account"
-                VerticalOptions="Start" 
-                HorizontalOptions="Center" 
-                FontSize="20"
-                TextColor="White"
-                />
+        <Label 
+            Text="Creating Account"
+            VerticalOptions="Start" 
+            HorizontalOptions="Center" 
+            FontSize="20"
+            TextColor="White"
+            />
 
-            <Label 
-                Text=""
-                x:Name="DecisionLabel"
-                VerticalOptions="Start" 
-                HorizontalOptions="Center" 
-                TextColor="White"
-                />
+        <Label 
+            Text=""
+            x:Name="DecisionLabel"
+            VerticalOptions="Start" 
+            HorizontalOptions="Center" 
+            TextColor="White"
+            />
 
+        <Grid
+            Padding="20"
+            RowSpacing="10"
+            ColumnSpacing="10"
+            HorizontalOptions="Center">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            
+            <!-- Left Side -->
+            <Label
+                Text="Name:"
+                Grid.Column="0"
+                Grid.Row="0"
+                HorizontalTextAlignment="End"
+                VerticalTextAlignment="Center"/>
+            
+            <Label
+                Text="PIN:"
+                Grid.Column="0"
+                Grid.Row="1"
+                HorizontalTextAlignment="End"
+                VerticalTextAlignment="Center"/>
+            
+            <Label
+                Text="E-mail:"
+                Grid.Column="0"
+                Grid.Row="2"
+                HorizontalTextAlignment="End"
+                VerticalTextAlignment="Center"/>
+            
+            <Label
+                Text="Phone Number:"
+                Grid.Column="0"
+                Grid.Row="3"
+                HorizontalTextAlignment="End"
+                VerticalTextAlignment="Center"/>
+            
+            <!-- Right Side -->
             <Entry
-                Placeholder="Enter Your Name"
+                Placeholder="Enter your Name"
                 HorizontalOptions="Start"
                 x:Name="Name"
                 TextColor="White"
-                />
+                Grid.Column="1"
+                Grid.Row="0"/>
 
             <Entry
-                Placeholder="Enter Your PIN. ex (1234)"
+                Placeholder="Enter a four digit PIN"
                 HorizontalOptions="Start"
                 x:Name="PIN"
                 TextColor="White"
-                />
+                Grid.Column="1"
+                Grid.Row="1"/>
 
             <Entry
-                Placeholder="Enter email: @Yahoo.com"
+                Placeholder="Enter your E-mail"
                 HorizontalOptions="Start"
                 x:Name="Email"
                 TextColor="White"
-            />
+                Grid.Column="1"
+                Grid.Row="2"/>
 
             <Entry
-                Placeholder="Enter Phone Number (must be 10 digits)"
+                Placeholder="Enter a 10 digit phone number"
                 HorizontalOptions="Start"
                 x:Name="PhoneNumber"
                 TextColor="White"
+                Grid.Column="1"
+                Grid.Row="3"/>
+            
+        </Grid>
+
+        <Button  
+            Text="Submit"
+            x:Name="SubmitBtn"
+            Clicked="BtnSubmit1"
+            HorizontalOptions="Center"/>
+
+        <ImageButton 
+            Source="point.png"
+            WidthRequest="50"
+            HeightRequest="50"
+            Clicked="BtnBackClicked"
             />
 
-            <Button  
-                Text="Submit"
-                x:Name="SubmitBtn"
-                HorizontalOptions="End"
-                WidthRequest="100"
-                HeightRequest="100"  
-                Clicked="BtnSubmit1"
-                />
-
-            <StackLayout Orientation="Horizontal" Spacing="50">
-                <ImageButton 
-                    Source="point.png"
-                    WidthRequest="50"
-                    HeightRequest="50"
-                    VerticalOptions="End"
-                    HorizontalOptions="Start"
-                    Clicked="BtnBackClicked"
-                />
-
-                <BoxView WidthRequest="0" HorizontalOptions="FillAndExpand" />
-                <Label 
-                    Text=""
-                    TextColor="White"
-                    FontAttributes="Bold"
-                    HorizontalOptions="Center"
-                    x:Name="Details"
-                    />
-
-            </StackLayout>
-
-        </VerticalStackLayout>
-    
-    </HorizontalStackLayout>
+    </VerticalStackLayout>
     
 </ContentPage>
