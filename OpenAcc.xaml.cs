@@ -1,17 +1,22 @@
+using WorldBankApp.LogicData;
+
 namespace WorldBankApp;
 
 public partial class OpenAcc : ContentPage
 {
-	public OpenAcc()
+    Bank bankMgr;
+
+    public OpenAcc(Bank bank)
 	{
 		InitializeComponent();
+        bankMgr = bank;
 	}
 
     //Navigates to ChequingAccount Creation Page
     private async void ChequingAcc(Object sender, EventArgs e) 
     {
 
-        await Navigation.PushAsync(new CreateAcc("Chequings Account"));//Navigates to Create Account Page
+        await Navigation.PushAsync(new CreateAcc(bankMgr, "Chequings Account"));//Navigates to Create Account Page
 
     }
 
@@ -19,7 +24,7 @@ public partial class OpenAcc : ContentPage
     private async void SavingAcc(Object sender, EventArgs e)
     {
 
-        await Navigation.PushAsync(new CreateAcc("Savings Account"));//Navigates to Create Account
+        await Navigation.PushAsync(new CreateAcc(bankMgr, "Savings Account"));//Navigates to Create Account
 
     }
 

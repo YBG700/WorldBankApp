@@ -2,8 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="WorldBankApp.MainPage"
-             Title="World Bank"
-             BackgroundImageSource="bag_of_money.png">
+             Title="World Bank">
 
 
     <ScrollView>
@@ -15,16 +14,16 @@
                    FontSize="Header" />
 
             <StackLayout Orientation="Horizontal" Spacing="50">
-                <Button Text="Open Account: "
+                <Button Text="Create Account"
                         x:Name="BtnOpenAccount"
                         HorizontalOptions="Start"
                         Clicked="AccountOpen"
                         />
 
 
-                <BoxView WidthRequest="0" HorizontalOptions="FillAndExpand" />
+                <BoxView WidthRequest="0" HorizontalOptions="FillAndExpand" /> <!-- What the fuck does this do? -->
 
-                <Button Text="Search Account: "
+                <Button Text="Log In"
                         Clicked="AccountSearch"
                         FontSize = "Body"
                         x:Name="BtnSearchAccount"

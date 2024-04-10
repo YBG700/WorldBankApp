@@ -1,7 +1,10 @@
+using WorldBankApp.LogicData;
+
 namespace WorldBankApp;
 
 public partial class CreateAcc : ContentPage
 {
+    Bank bankMgr;
 
     private string name;
     private string pin;
@@ -11,9 +14,11 @@ public partial class CreateAcc : ContentPage
     private int accNumber;
 
     Random random = new Random();
-    public CreateAcc(string choice)
+    public CreateAcc(Bank bank, string choice)
 	{
 		InitializeComponent();
+        bankMgr = bank;
+
         DecisionLabel.Text += choice;
         string _account = DecisionLabel.Text;
 	}

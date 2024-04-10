@@ -24,10 +24,6 @@
              TextColor="White"
          />
 
-
-
-
-
         <Entry
            Placeholder="Enter Your Name"
            HorizontalOptions="Start"

@@ -1,10 +1,15 @@
+using WorldBankApp.LogicData;
+
 namespace WorldBankApp
 {
     public partial class SearchAcc : ContentPage
     {
-        public SearchAcc()
+        Bank bankMgr;
+
+        public SearchAcc(Bank bank)
         {
             InitializeComponent();
+            bankMgr = bank;
         }
 
         private async void BtnBackClicked(object sender, EventArgs e)
@@ -12,10 +17,9 @@ namespace WorldBankApp
             await Navigation.PopAsync(); // Use PopAsync to navigate back to the previous page
         }
 
-        public void SubmitBtn(object sender, EventArgs e)
+        public void SearchBtn(object sender, EventArgs e)
         {
 
         }
-
     }
 }

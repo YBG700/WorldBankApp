@@ -68,7 +68,7 @@ namespace WorldBankApp.LogicData
             bankDatabase.Add(acc);
         }
 
-        // Log in Account
+        // Log into Account
         public void LoginAccount(int accNum, int accPin)
         {
             if (activeAccount == null)
@@ -113,35 +113,6 @@ namespace WorldBankApp.LogicData
                 }
             }
             return null;
-        }
-
-        // Create Account
-        public void CreateAccount(int type)
-        {
-            // 1 = Basic Account
-            // 2 = Savings Account
-            // 3 = Chequing Account
-
-            switch (type)
-            {
-                case 1:
-                    // Basic Account
-                    //Account acc = new Account();
-                    //bankDatabase.Add(acc);
-                    break;
-                case 2:
-                    // Savings Account
-                    //SavingsAccount savAcc = new SavingsAccount();
-                    //bankDatabase.Add(acc);
-                    break;
-                case 3:
-                    // Chequing Account
-                    //ChequingAccount cheAcc = new ChequingAccount();
-                    //bankDatabase.Add(acc);
-                    break;
-                default:
-                    throw new ArgumentException("An Error has occurred.");
-            }
         }
 
         // Edit Account

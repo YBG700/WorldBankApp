@@ -14,19 +14,25 @@
             HorizontalOptions="Center" />
 
         <Entry
-            
-            Placeholder="Enter your account ID:"
+            x:Name="IdEntry"
+            Placeholder="Enter your Account ID"
             VerticalOptions="Center"
             HorizontalOptions="Center"
-            
+            />
+
+        <Entry
+            x:Name="PinEntry"
+            Placeholder="Enter your Account PIN"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
             />
 
         <Button 
-            Text="Submit"
+            Text="Search"
             FontSize="Body"
             VerticalOptions="Center"
             HorizontalOptions="Center"
-            
+            Clicked="SearchBtn"
             />
 
         <ImageButton 
