@@ -5,8 +5,51 @@
              Title="AccountPage">
     <VerticalStackLayout>
         <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+            Text="Hello! Please Select an Option"
+            VerticalOptions="Start" 
+            HorizontalOptions="Center"
+            FontAttributes="Bold"
+            FontSize="Header"
+            />
+
+        <StackLayout Orientation="Horizontal" Spacing="300">
+
+            <Button
+              Text="Withdraw"
+              HorizontalOptions="Start"
+              VerticalOptions="Center"
+              Clicked="BtnWithdraw"
+            />
+
+            <Button
+             Text="Deposit"
+             HorizontalOptions="Center"
+             VerticalOptions="Center"
+             Clicked="BtnDeposit"
+           
+               />
+
+           <Button
+              Text="Log Out"  
+              VerticalOptions="Center"
+              HorizontalOptions="End"
+              Clicked="BtnLogout"
+                
+                />
+
+            <ImageButton 
+             Source="point.png"
+             WidthRequest="50"
+             HeightRequest="50"
+             VerticalOptions="End"
+             HorizontalOptions="Start"
+             Clicked="BtnBackClicked"
+     
+               />
+
+
+
+        </StackLayout>
+
     </VerticalStackLayout>
 </ContentPage>

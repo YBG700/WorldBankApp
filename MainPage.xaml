@@ -21,7 +21,7 @@
                         />
 
 
-                <BoxView WidthRequest="0" HorizontalOptions="FillAndExpand" /> <!-- What the fuck does this do? -->
+                <BoxView WidthRequest="0" HorizontalOptions="FillAndExpand" /> <!-- What the fuck does this do? LMAOOOOOOO -->
 
                 <Button Text="Log In"
                         Clicked="AccountSearch"

@@ -14,7 +14,7 @@
             VerticalOptions="Start" 
             HorizontalOptions="Center" 
             FontSize="20"
-            TextColor="White"
+            
             />
 
         <Label 
@@ -22,7 +22,7 @@
             x:Name="DecisionLabel"
             VerticalOptions="Start" 
             HorizontalOptions="Center" 
-            TextColor="White"
+            
             />
 
         <Grid
@@ -76,7 +76,6 @@
                 Placeholder="Enter your Name"
                 HorizontalOptions="Start"
                 x:Name="Name"
-                TextColor="White"
                 Grid.Column="1"
                 Grid.Row="0"/>
 
@@ -84,7 +83,6 @@
                 Placeholder="Enter a four digit PIN"
                 HorizontalOptions="Start"
                 x:Name="PIN"
-                TextColor="White"
                 Grid.Column="1"
                 Grid.Row="1"/>
 
@@ -92,7 +90,6 @@
                 Placeholder="Enter your E-mail"
                 HorizontalOptions="Start"
                 x:Name="Email"
-                TextColor="White"
                 Grid.Column="1"
                 Grid.Row="2"/>
 
@@ -100,7 +97,6 @@
                 Placeholder="Enter a 10 digit phone number"
                 HorizontalOptions="Start"
                 x:Name="PhoneNumber"
-                TextColor="White"
                 Grid.Column="1"
                 Grid.Row="3"/>
             
