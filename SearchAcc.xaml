@@ -2,30 +2,67 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="WorldBankApp.SearchAcc"
-             Background="AliceBlue"
-             Title="Search For Your Account">
+             Title="">
     
-    <VerticalStackLayout>
+    <VerticalStackLayout
+        Margin="20"
+        Spacing="10">
+        
         <Label 
-            Text="Please Enter your Account Number!"
-            FontAttributes="Italic"
-            FontSize="Medium"
+            Text="Account Login"
+            FontSize="Header"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
 
-        <Entry
-            x:Name="IdEntry"
-            Placeholder="Enter your Account ID"
-            VerticalOptions="Center"
-            HorizontalOptions="Center"
-            />
+        <Grid
+            Margin="20"
+            Padding="20"
+            RowSpacing="10"
+            ColumnSpacing="10"
+            HorizontalOptions="Center">
 
-        <Entry
-            x:Name="PinEntry"
-            Placeholder="Enter your Account PIN"
-            VerticalOptions="Center"
-            HorizontalOptions="Center"
-            />
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            
+            <!-- Left Side -->
+            <Label
+                Text="Account ID:"
+                Grid.Column="0"
+                Grid.Row="0"
+                HorizontalTextAlignment="End"
+                VerticalTextAlignment="Center"/>
+
+            <Label
+                Text="PIN:"
+                Grid.Column="0"
+                Grid.Row="1"
+                HorizontalTextAlignment="End"
+                VerticalTextAlignment="Center"/>
+
+            <!-- Right Side -->
+            <Entry
+                x:Name="IdEntry"
+                Placeholder="Enter your Account ID"
+                Grid.Column="1"
+                Grid.Row="0"
+                HorizontalOptions="Start"
+                WidthRequest="200"/>
+
+            <Entry
+                x:Name="PinEntry"
+                Placeholder="Enter your Account PIN"
+                Grid.Column="1"
+                Grid.Row="1"
+                HorizontalOptions="Start"
+                WidthRequest="200"/>
+
+        </Grid>
 
         <Button 
             Text="Search"
@@ -33,6 +70,7 @@
             VerticalOptions="Center"
             HorizontalOptions="Center"
             Clicked="SearchBtn"
+            WidthRequest="150"
             />
 
         <ImageButton 
@@ -40,9 +78,8 @@
             WidthRequest="50"
             HeightRequest="50"
             VerticalOptions="End"
-            HorizontalOptions="Start"
-            Clicked="BtnBackClicked"
+            HorizontalOptions="Center"
+            Clicked="BtnBackClicked"/>
             
-            />
     </VerticalStackLayout>
 </ContentPage>
