@@ -1,4 +1,3 @@
-using CarPlay;
 using WorldBankApp.LogicData;
 
 namespace WorldBankApp;
@@ -82,10 +81,18 @@ public partial class CreateAcc : ContentPage
                 bankMgr.CreateSavingsAccount(500, accNum, int.Parse(pin), name, long.Parse(phone), email, 15.50, null);
                 break;
         }
+
+        bankMgr.LoginAccount(accNum, int.Parse(pin));
+        OpenAccountPage();
     }
-    
+
     private async void BtnBackClicked(object sender, EventArgs e)
     {
         await Navigation.PopAsync(); // Use PopAsync to navigate back to the previous page
+    }
+
+    public async void OpenAccountPage()
+    {
+        await Navigation.PushAsync(new AccountPage(bankMgr));
     }
 }
