@@ -1,6 +1,7 @@
 ﻿using Microsoft.Maui.ApplicationModel.Communication;
 using System;
 using System.IO;
+using System.Reflection;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
@@ -18,10 +19,15 @@ namespace WorldBankApp.LogicData
         Account? activeAccount = null;
 
         // JSON Filepath
-        string filePath = "LogicData/BankDatabase.json";
+        string filePath;
 
         public void InitialLoad()
         {
+            // Gets filepath for LogicData folder
+            string directoryPath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+
+            // Assigns file path for JSON file
+            filePath = Path.Combine(directoryPath, "BankDatabase.json");
 
             // Open and Read JSON Data
             try
@@ -84,7 +90,7 @@ namespace WorldBankApp.LogicData
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"An error occurred during initialization: {ex.Message}");
+                System.Diagnostics.Debug.WriteLine($"An error occurred during initialization: {ex.Message}");
             }
         }
 
@@ -93,6 +99,12 @@ namespace WorldBankApp.LogicData
         {
             try
             {
+                if (!File.Exists(filePath))
+                { 
+                    // Create file if it doesn't exist
+                    File.Create(filePath).Close();
+                }
+
                 // Assign Serializer Options
                 var options = new JsonSerializerOptions
                 {
@@ -108,7 +120,7 @@ namespace WorldBankApp.LogicData
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"An error occurred during saving: {ex.Message}");
+                System.Diagnostics.Debug.WriteLine($"An error occurred during saving: {ex.Message}");
             }
         }
 
