@@ -45,6 +45,9 @@ namespace WorldBankApp.LogicData
 
                     bankDatabase.Add(acc1);
                     bankDatabase.Add(acc2);
+
+                    // Save JSON
+                    SaveJSON();
                 }
 
                 // Basic Deal Object
@@ -110,6 +113,8 @@ namespace WorldBankApp.LogicData
                 {
                     // Set reference handling to preserve for polymorphic serialization
                     ReferenceHandler = ReferenceHandler.Preserve,
+
+                    WriteIndented = true,
                 };
 
                 // Serialize bankDatabase into a String
