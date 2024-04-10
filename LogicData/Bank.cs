@@ -218,8 +218,20 @@ namespace WorldBankApp.LogicData
                 else
                 {
                     // If account has no active deal
-                    acc.CurrBal -= acc.MonthlyFee;
-                    acc.LastFeeDate = currentDate;
+                    if (acc is SavingsAccount)
+                    {
+                        // If account is a Savings Account
+                        acc.CurrBal -= acc.MonthlyFee;
+                        acc.LastFeeDate = currentDate;
+
+                        AddInterest(acc);
+                    }
+                    else
+                    {
+                        // If not savings account
+                        acc.CurrBal -= acc.MonthlyFee;
+                        acc.LastFeeDate = currentDate;
+                    }
                 }
             }
         }
@@ -232,6 +244,11 @@ namespace WorldBankApp.LogicData
             {
                 // Adds 5.55% interest to current balance
                 acc.CurrBal += (acc.CurrBal * (5.55 / 100));
+            }
+            else
+            {
+                // Adds base 2% interest to current balance
+                acc.CurrBal += (acc.CurrBal * (2 / 100));
             }
         }
 

@@ -68,27 +68,7 @@ public partial class CreateAcc : ContentPage
             await DisplayAlert("PHONE NUMBER", "HAVE ATLEAST 10 DIGITS!", "OK");
             return;
         }
-
-
-        SubmitBtn.IsEnabled = false;
-        balance = random.Next(0, 1001);
-        accNumber = random.Next(100000, 1000000);
-
-        Button newButton = new Button
-        {
-            Text = $"Your Account Number:{accNumber} \n Your balance: {balance}",
-            VerticalOptions = LayoutOptions.End,
-            HorizontalOptions = LayoutOptions.Center
-
-
-        };
-
-        // Set up event handler for button click
-        newButton.Clicked += newButtonClicked;
-
-
-        // Add the button to the content of the page
-        Content = newButton;
+        
 
     }
 
