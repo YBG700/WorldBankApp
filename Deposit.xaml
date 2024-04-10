@@ -14,7 +14,7 @@
         <Entry
             VerticalOptions="Center"
             HorizontalOptions="Center"
-            x:Name="WithdrawAmount"
+            x:Name="DepositAmount"
                           
             />
 
@@ -33,6 +33,17 @@
             HorizontalOptions="Center"
             x:Name="MoneyDeposit"
             />
+
+        <ImageButton 
+           Source="point.png"
+           WidthRequest="50"
+           HeightRequest="50"
+           VerticalOptions="End"
+           HorizontalOptions="Start"
+           Clicked="BtnBackClicked"
+     
+         />
+
 
 
     </VerticalStackLayout>

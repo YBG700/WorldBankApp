@@ -22,7 +22,7 @@ public partial class Deposit : ContentPage
 	private async void DepositBtn(object sender, EventArgs e)
 	{
 
-		money = WithdrawAmount.Text;
+		money = DepositAmount.Text;
 
 		if (!double.TryParse(money, out double amount) || amount < 0 || string.IsNullOrEmpty(money))
         {
@@ -40,4 +40,10 @@ public partial class Deposit : ContentPage
 	
 	
 	}
+
+    private async void BtnBackClicked(object sender, EventArgs e)
+    {
+        await Navigation.PopAsync(); // Use PopAsync to navigate back to the previous page
+    }
+
 }

@@ -222,7 +222,7 @@ namespace WorldBankApp.LogicData
         }
 
         // Withdraw
-        public void Withdraw(int withdraw)
+        public void Withdraw(double withdraw)
         {
             if (activeAccount != null)
             {
