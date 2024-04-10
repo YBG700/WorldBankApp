@@ -152,7 +152,7 @@ namespace WorldBankApp.LogicData
         }
 
         // Deposit
-        public void Deposit(int deposit)
+        public void Deposit(double deposit)
         {
             if (activeAccount != null)
             {

@@ -23,7 +23,7 @@ public partial class AccountPage : ContentPage
     private async void BtnDeposit(object sender, EventArgs e)
     {
 
-        await Navigation.PushAsync(new Deposit());
+        await Navigation.PushAsync(new Deposit(bankMgr));
 
     }
 
