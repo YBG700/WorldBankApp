@@ -13,6 +13,14 @@ public partial class OpenAcc : ContentPage
 	}
 
     //Navigates to ChequingAccount Creation Page
+    private async void BasicAcc(Object sender, EventArgs e)
+    {
+
+        await Navigation.PushAsync(new CreateAcc(bankMgr, "Basic Account"));//Navigates to Create Account Page
+
+    }
+
+    //Navigates to ChequingAccount Creation Page
     private async void ChequingAcc(Object sender, EventArgs e) 
     {
 
@@ -24,7 +32,7 @@ public partial class OpenAcc : ContentPage
     private async void SavingAcc(Object sender, EventArgs e)
     {
 
-        await Navigation.PushAsync(new CreateAcc(bankMgr, "Savings Account"));//Navigates to Create Account
+        await Navigation.PushAsync(new CreateAcc(bankMgr, "Savings Account"));//Navigates to Create Account Page
 
     }
 

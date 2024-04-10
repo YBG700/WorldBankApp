@@ -30,12 +30,16 @@ namespace WorldBankApp.LogicData
                 bankDatabase.Add(acc1);
                 bankDatabase.Add(acc2);
 
+                // Sorts the list by account number
+                bankDatabase.Sort((x, y) => x.AccNum.CompareTo(y.AccNum));
+
+                // Applies monthly fees and interest
                 foreach (Account acc in bankDatabase)
                 {
                     ChargeFee(acc);
                 }
 
-                Deals deal1 = new Deals("Student Savings", "Special offer for students. No monthly interest payments for the duration of their academic term.", 48, DealEnum.StudentSavings);
+                Deals deal1 = new Deals("Student Savings", "Special offer for students. No monthly fees for the duration of their academic term.", 48, DealEnum.StudentSavings);
 
                 dealDatabase.Add(deal1);
             }
@@ -113,6 +117,32 @@ namespace WorldBankApp.LogicData
                 }
             }
             return null;
+        }
+
+        // Get an unused Account Number
+        public int GetNewAccountNumber()
+        {
+            // If there are no other accounts, return first acc num
+            if (bankDatabase == null || bankDatabase.Count == 0)
+            {
+                return 10000;
+            }
+
+            // Sort the list by acc num
+            bankDatabase.Sort((x, y) => x.AccNum.CompareTo(y.AccNum));
+
+            int num = 10000;
+
+            // Searches for the first free account number
+            foreach (Account acc in bankDatabase)
+            {
+                if (num != acc.AccNum)
+                {
+                    return num;
+                }
+                num++;
+            }
+            return num;
         }
 
         // Edit Account

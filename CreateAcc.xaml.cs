@@ -1,3 +1,4 @@
+using CarPlay;
 using WorldBankApp.LogicData;
 
 namespace WorldBankApp;
@@ -10,17 +11,15 @@ public partial class CreateAcc : ContentPage
     private string pin;
     private string email;
     private string phone;
-    private int balance;
-    private int accNumber;
+    string accountType;
 
-    Random random = new Random();
     public CreateAcc(Bank bank, string choice)
 	{
 		InitializeComponent();
         bankMgr = bank;
 
-        DecisionLabel.Text += choice;
-        string _account = DecisionLabel.Text;
+        DecisionLabel.Text = choice;
+        accountType = choice;
 	}
 
     private async void BtnSubmit1(object sender, EventArgs e) 
@@ -57,7 +56,7 @@ public partial class CreateAcc : ContentPage
             return; 
         }
 
-        if(email.Contains("@") == false) 
+        if (email.Contains("@") == false) 
         {
             await DisplayAlert("EMAIL", "MUST BE A VALID EMAIL!", "OK");
             return;
@@ -68,23 +67,25 @@ public partial class CreateAcc : ContentPage
             await DisplayAlert("PHONE NUMBER", "HAVE ATLEAST 10 DIGITS!", "OK");
             return;
         }
-        
 
-    }
+        int accNum = bankMgr.GetNewAccountNumber();
 
-
-
-    private async void newButtonClicked(object sender, EventArgs e) 
-    {
-
-        await Navigation.PushAsync(new MainPage());
-
+        switch (accountType)
+        {
+            case "Basic Account":
+                bankMgr.CreateAccount(accNum, int.Parse(pin), name, long.Parse(phone), email, 10.25, null);
+                break;
+            case "Chequings Account":
+                bankMgr.CreateChequingAccount(500, accNum, int.Parse(pin), name, long.Parse(phone), email, 16.99, null);
+                break;
+            case "Savings Account":
+                bankMgr.CreateSavingsAccount(500, accNum, int.Parse(pin), name, long.Parse(phone), email, 15.50, null);
+                break;
+        }
     }
     
     private async void BtnBackClicked(object sender, EventArgs e)
     {
         await Navigation.PopAsync(); // Use PopAsync to navigate back to the previous page
     }
-
-    
 }

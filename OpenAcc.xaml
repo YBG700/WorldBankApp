@@ -2,42 +2,46 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="WorldBankApp.OpenAcc"
-             Title="Open Your Account"
-             BackgroundColor="Black">
+             Title="">
     
     <VerticalStackLayout>
 
         <Label
             
-            Text="Please Select Your Account"
+            Text="Select the type of account you want to open:"
             HorizontalOptions="Center"
             FontSize="Header"
-            TextColor="White"
-            
-            />
+            TextColor="White"/>
 
 
         <StackLayout
             Orientation="Horizontal" 
-            Spacing="50">
+            Spacing="50"
+            HorizontalOptions="Center">
 
-         <Button
-             Text="Chequings Account"
-             FontSize="Body"
-             VerticalOptions="Center"
-             HorizontalOptions="Start"
-             Clicked="ChequingAcc"
-             />
+            <Button
+                Text ="Basic Account"
+                FontSize ="Body"
+                VerticalOptions ="Center"
+                HorizontalOptions ="End"
+                Clicked="BasicAcc"
+                />
 
-            <BoxView WidthRequest="0" HorizontalOptions="FillAndExpand" />
+            <Button
+                Text="Chequings Account"
+                FontSize="Body"
+                VerticalOptions="Center"
+                HorizontalOptions="Start"
+                Clicked="ChequingAcc"
+                />
 
-         <Button
-            Text ="Savings Account"
-            FontSize ="Body"
-            VerticalOptions ="Center"
-            HorizontalOptions ="End"
-            Clicked="SavingAcc"
-             />
+            <Button
+                Text ="Savings Account"
+                FontSize ="Body"
+                VerticalOptions ="Center"
+                HorizontalOptions ="End"
+                Clicked="SavingAcc"
+                />
 
         </StackLayout>
 

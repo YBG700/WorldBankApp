@@ -2,91 +2,89 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="WorldBankApp.CreateAcc"
-             Title="Creating Account"
-             BackgroundColor="Black">
+             Title="">
 
-    <VerticalStackLayout>
+    <HorizontalStackLayout
+        HorizontalOptions="Center">
+        
+        <VerticalStackLayout>
 
-        <Label 
-            Text="Creating Account"
-            VerticalOptions="Start" 
-            HorizontalOptions="Center" 
-            FontSize="Header"
-            TextColor="White"
-            />
-
-        <Label 
-             Text=""
-             x:Name="DecisionLabel"
-             VerticalOptions="Start" 
-             HorizontalOptions="Center" 
-             FontAttributes="Italic"
-             TextColor="White"
-         />
-
-        <Entry
-           Placeholder="Enter Your Name"
-           HorizontalOptions="Start"
-           x:Name="Name"
-           TextColor="White"
-           
-            
-            />
-
-        <Entry
-           Placeholder="Enter Your PIN. ex (1234)"
-           HorizontalOptions="Start"
-           x:Name="PIN"
-           TextColor="White"
-            />
-
-        <Entry
-         Placeholder="Enter email: @Yahoo.com"
-         HorizontalOptions="Start"
-         x:Name="Email"
-         TextColor="White"
-        />
-
-        <Entry
-           Placeholder="Enter Phone Number (must be 10 digits)"
-           HorizontalOptions="Start"
-           x:Name="PhoneNumber"
-           TextColor="White"
-        />
-
-        <Button  
-            Text="Submit"
-            x:Name="SubmitBtn"
-            HorizontalOptions="End"
-            WidthRequest="100"
-            HeightRequest="100"  
-            Clicked="BtnSubmit1"
-            />
-
-
-
-
-        <StackLayout Orientation="Horizontal" Spacing="50">
-            <ImageButton 
-             Source="point.png"
-             WidthRequest="50"
-             HeightRequest="50"
-             VerticalOptions="End"
-             HorizontalOptions="Start"
-             Clicked="BtnBackClicked"
-            />
-
-            <BoxView WidthRequest="0" HorizontalOptions="FillAndExpand" />
             <Label 
-                Text=""
+                Text="Creating Account"
+                VerticalOptions="Start" 
+                HorizontalOptions="Center" 
+                FontSize="20"
                 TextColor="White"
-                FontAttributes="Bold"
-                HorizontalOptions="Center"
-                x:Name="Details"
                 />
 
+            <Label 
+                Text=""
+                x:Name="DecisionLabel"
+                VerticalOptions="Start" 
+                HorizontalOptions="Center" 
+                TextColor="White"
+                />
 
-        </StackLayout>
+            <Entry
+                Placeholder="Enter Your Name"
+                HorizontalOptions="Start"
+                x:Name="Name"
+                TextColor="White"
+                />
 
-    </VerticalStackLayout>
+            <Entry
+                Placeholder="Enter Your PIN. ex (1234)"
+                HorizontalOptions="Start"
+                x:Name="PIN"
+                TextColor="White"
+                />
+
+            <Entry
+                Placeholder="Enter email: @Yahoo.com"
+                HorizontalOptions="Start"
+                x:Name="Email"
+                TextColor="White"
+            />
+
+            <Entry
+                Placeholder="Enter Phone Number (must be 10 digits)"
+                HorizontalOptions="Start"
+                x:Name="PhoneNumber"
+                TextColor="White"
+            />
+
+            <Button  
+                Text="Submit"
+                x:Name="SubmitBtn"
+                HorizontalOptions="End"
+                WidthRequest="100"
+                HeightRequest="100"  
+                Clicked="BtnSubmit1"
+                />
+
+            <StackLayout Orientation="Horizontal" Spacing="50">
+                <ImageButton 
+                    Source="point.png"
+                    WidthRequest="50"
+                    HeightRequest="50"
+                    VerticalOptions="End"
+                    HorizontalOptions="Start"
+                    Clicked="BtnBackClicked"
+                />
+
+                <BoxView WidthRequest="0" HorizontalOptions="FillAndExpand" />
+                <Label 
+                    Text=""
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    HorizontalOptions="Center"
+                    x:Name="Details"
+                    />
+
+            </StackLayout>
+
+        </VerticalStackLayout>
+    
+    </HorizontalStackLayout>
+    
 </ContentPage>
