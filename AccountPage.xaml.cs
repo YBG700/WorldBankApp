@@ -71,7 +71,7 @@ public partial class AccountPage : ContentPage
     {
 
 		bankMgr.LogOut();
-		await Navigation.PushAsync(new MainPage());//Return to title Screen
+		await Navigation.PopToRootAsync(); // Goes to MainPage
 
     }
 }
