@@ -2,13 +2,6 @@
 
 namespace WorldBankApp.LogicData
 {
-
-    // Type Decriminators for JSON Serialization
-    // Identifies which json object is for which class... Python is better
-    [JsonDerivedType(typeof(Account), typeDiscriminator: "Basic")]
-    [JsonDerivedType(typeof(SavingsAccount), typeDiscriminator: "Savings")]
-    [JsonDerivedType(typeof(ChequingAccount), typeDiscriminator: "Chequing")]
-
     public class Account
     {
         // Standard Account
