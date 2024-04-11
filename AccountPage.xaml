@@ -47,17 +47,22 @@
                 WidthRequest="250"
                 />
 
-            <Label
-                Text="Available Deals:"/>
-
-            <Label
+            <VerticalStackLayout
+                HorizontalOptions="Center"
+                WidthRequest="400"
+                Spacing="10">
                 
-                Text=""
-                FontSize="Body"
-                x:Name="LblDeals"
-                
-                />
+                <Label
+                    Text="Available Deals:"/>
 
+                <Label
+                    Text=""
+                    FontSize="Body"
+                    x:Name="LblDeals"
+                    
+                    />
+            </VerticalStackLayout>
+        
         </VerticalStackLayout>
 
     </VerticalStackLayout>
