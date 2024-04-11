@@ -351,16 +351,12 @@ namespace WorldBankApp.LogicData
             }
         }
 
-        // Display Deal
+        // Display Deals List
         public List<Deals>? CheckDeals()
         {
-            // Shows the deals to the user;
+            // Returns list of deals
 
-            // Two Approaches:
-            // 1. Show all deals
-            // 2. Show only valid deals to specific user
-
-            return null;
+            return dealDatabase;
         }
 
         // Get Active Deal for Account
