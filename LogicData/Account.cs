@@ -29,20 +29,6 @@ namespace WorldBankApp.LogicData
             _lastFeeDate = DateTime.Now;
         }
 
-        // Parameterless constructor for deserialization
-        public Account()
-        {
-            _accNum = 0;
-            _accPin = 0;
-            _accHolderName = "";
-            _accPhoneNum = 0;
-            _accEmail = "";
-            _currBal = 0;
-            _monthlyFee = 0;
-            _activeDeal = null;
-            _lastFeeDate = DateTime.MinValue;
-        }
-
         // Getters - Setters
         public int AccNum
         {

@@ -63,9 +63,6 @@ namespace WorldBankApp.LogicData
                 {
                     ChargeFee(acc);
                 }
-
-                // Save JSON
-                SaveJSON();
             }
             catch (Exception ex)
             {
@@ -78,7 +75,11 @@ namespace WorldBankApp.LogicData
         {
             try
             {
-                
+                // Reads the Json File
+                string jsonString = File.ReadAllText(filePath);
+
+                // Assigns it to a list
+                dealDatabase = JsonSerializer.Deserialize<List<Deals>>(jsonString);
             }
             catch (Exception ex)
             {
@@ -97,11 +98,19 @@ namespace WorldBankApp.LogicData
                     File.Create(filePath).Close();
                 }
 
+                // Assigns new Serializer Options
                 var options = new JsonSerializerOptions
                 {
-                    WriteIndented = true 
+                    // Indents the JSON file for better readability
+                    WriteIndented = true
                 };
-                
+
+                // Converts the list into a string
+                string jsonString = JsonSerializer.Serialize(dealDatabase, options);
+
+                // Writes the string to the JSON file
+                File.WriteAllText(filePath, jsonString);
+
             }
             catch (Exception ex)
             {
