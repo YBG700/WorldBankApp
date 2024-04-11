@@ -11,7 +11,7 @@ public partial class CreateAcc : ContentPage
     private string email;
     private string phone;
     string accountType;
-    private string selectedDate;
+    private DateTime selectedDate;
 
     public CreateAcc(Bank bank, string choice)
 	{
@@ -28,7 +28,7 @@ public partial class CreateAcc : ContentPage
         pin = PIN.Text;
         email = Email.Text;
         phone = PhoneNumber.Text;
-        selectedDate = datePicker.Date.ToString();
+        selectedDate = datePicker.Date;
 
 
         if (string.IsNullOrEmpty(name))
@@ -74,13 +74,13 @@ public partial class CreateAcc : ContentPage
         switch (accountType)
         {
             case "Basic Account":
-                bankMgr.CreateAccount(accNum, int.Parse(pin), name, long.Parse(phone), email, 10.25, null);
+                bankMgr.CreateAccount(accNum, int.Parse(pin), name, long.Parse(phone), email, 10.25, null, selectedDate);
                 break;
             case "Chequings Account":
-                bankMgr.CreateChequingAccount(500, accNum, int.Parse(pin), name, long.Parse(phone), email, 16.99, null);
+                bankMgr.CreateChequingAccount(500, accNum, int.Parse(pin), name, long.Parse(phone), email, 16.99, null, selectedDate);
                 break;
             case "Savings Account":
-                bankMgr.CreateSavingsAccount(500, accNum, int.Parse(pin), name, long.Parse(phone), email, 15.50, null);
+                bankMgr.CreateSavingsAccount(500, accNum, int.Parse(pin), name, long.Parse(phone), email, 15.50, null, selectedDate);
                 break;
         }
 
