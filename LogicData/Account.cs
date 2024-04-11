@@ -12,11 +12,12 @@ namespace WorldBankApp.LogicData
         private string _accEmail;
         private double _currBal;
         private double _monthlyFee;
+        private DateTime _accCreationDate;
         private DateTime _lastFeeDate;
         private Deals? _activeDeal;
 
         // Constructor
-        public Account(int accNum, int accPin, string holderName, long phoneNum, string email, double fee, Deals? activeDeal)
+        public Account(int accNum, int accPin, string holderName, long phoneNum, string email, double fee, Deals? activeDeal, DateTime date)
         {
             _accNum = accNum;
             _accPin = accPin;
@@ -26,6 +27,7 @@ namespace WorldBankApp.LogicData
             _currBal = 0;
             _monthlyFee = fee;
             _activeDeal = activeDeal;
+            _accCreationDate = date;
             _lastFeeDate = DateTime.Now;
         }
 
@@ -66,6 +68,12 @@ namespace WorldBankApp.LogicData
             set { _monthlyFee = value; }
         }
 
+        public DateTime CreationDate
+        {
+            get { return _accCreationDate; }
+            set { _accCreationDate = value; }
+        }
+
         public DateTime LastFeeDate
         {
             get { return _lastFeeDate; }
@@ -104,8 +112,8 @@ namespace WorldBankApp.LogicData
         private double _minBal;
 
         // Constructor
-        public SavingsAccount(int minBal, int accNum, int accPin, string holderName, long phoneNum, string email, double fee, Deals? activeDeal)
-            : base(accNum, accPin, holderName, phoneNum, email, fee, activeDeal)
+        public SavingsAccount(int minBal, int accNum, int accPin, string holderName, long phoneNum, string email, double fee, Deals? activeDeal, DateTime date)
+            : base(accNum, accPin, holderName, phoneNum, email, fee, activeDeal, date)
         {
             _minBal = minBal;
         }
@@ -124,8 +132,8 @@ namespace WorldBankApp.LogicData
         private double _overDraftLimit;
 
         // Constructor
-        public ChequingAccount(int overDraftLimit, int accNum, int accPin, string holderName, long phoneNum, string email, double fee, Deals? activeDeal)
-            : base(accNum, accPin, holderName, phoneNum, email, fee, activeDeal)
+        public ChequingAccount(int overDraftLimit, int accNum, int accPin, string holderName, long phoneNum, string email, double fee, Deals? activeDeal, DateTime date)
+            : base(accNum, accPin, holderName, phoneNum, email, fee, activeDeal, date)
         {
             _overDraftLimit = overDraftLimit;
         }
