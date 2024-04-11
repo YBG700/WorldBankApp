@@ -34,7 +34,9 @@ public partial class Deposit : ContentPage
 
 		bankMgr.Deposit(double.Parse(money));
 
-		MoneyDeposit.Text = $"New Amount: {money}";
+		double newAmount = bankMgr.Getbalance();
+
+		MoneyDeposit.Text = $"New Amount: {newAmount}";
 
 
 	

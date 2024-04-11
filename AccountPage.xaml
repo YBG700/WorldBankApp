@@ -2,55 +2,52 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="WorldBankApp.AccountPage"
-             Title="AccountPage">
-    <VerticalStackLayout>
+             Title="">
+    
+    <VerticalStackLayout
+        Margin="20">
+        
         <Label 
-            Text="Hello! Please Select an Option"
+            Text="Your Account"
             VerticalOptions="Start" 
             HorizontalOptions="Center"
             FontAttributes="Bold"
             FontSize="Header"
             />
 
-        <StackLayout Orientation="Horizontal" Spacing="300">
+        <VerticalStackLayout
+            HorizontalOptions="Center"
+            Spacing="20">
 
             <Button
-              Text="Withdraw"
-              HorizontalOptions="Start"
-              VerticalOptions="Center"
-              Clicked="BtnWithdraw"
+                Text="Withdraw"
+                Clicked="BtnWithdraw"
                 
-            />
+                />
 
             <Button
-             Text="Deposit"
-             HorizontalOptions="Center"
-             VerticalOptions="Center"
-             Clicked="BtnDeposit"
+                Text="Deposit"
+                Clicked="BtnDeposit"
            
-               />
+                />
 
-           <Button
-              Text="Log Out"  
-              VerticalOptions="Center"
-              HorizontalOptions="End"
-              Clicked="BtnLogout"
+            <Button
+                Text="Log Out"  
+                Clicked="BtnLogout"
                 
                 />
 
             <ImageButton 
-             Source="point.png"
-             WidthRequest="50"
-             HeightRequest="50"
-             VerticalOptions="End"
-             HorizontalOptions="Start"
-             Clicked="BtnBackClicked"
+                Source="point.png"
+                WidthRequest="50"
+                HeightRequest="50"
+                Clicked="BtnBackClicked"
      
-               />
+                />
 
 
 
-        </StackLayout>
+        </VerticalStackLayout>
 
     </VerticalStackLayout>
 </ContentPage>
