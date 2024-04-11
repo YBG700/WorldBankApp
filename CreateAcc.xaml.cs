@@ -11,6 +11,7 @@ public partial class CreateAcc : ContentPage
     private string email;
     private string phone;
     string accountType;
+    private string selectedDate;
 
     public CreateAcc(Bank bank, string choice)
 	{
@@ -27,8 +28,9 @@ public partial class CreateAcc : ContentPage
         pin = PIN.Text;
         email = Email.Text;
         phone = PhoneNumber.Text;
+        selectedDate = datePicker.Date.ToString();
 
-        
+
         if (string.IsNullOrEmpty(name))
         {
             await DisplayAlert("NAME", "PLEASE ENTER YOUR NAME", "OK");

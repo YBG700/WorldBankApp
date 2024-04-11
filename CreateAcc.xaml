@@ -123,7 +123,14 @@
                 />
             
         </StackLayout>
+
+        <StackLayout>
+            <Label Text="Select a Date:" />
+            <DatePicker x:Name="datePicker" 
+                            Date="{Binding SelectedDate}" />
+        </StackLayout>
         
+
     </VerticalStackLayout>
     
 </ContentPage>
