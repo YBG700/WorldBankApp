@@ -14,6 +14,10 @@ public partial class AccountPage : ContentPage
 		InitializeComponent();
 		bankMgr = bank;
         DealsLayout = new StackLayout();
+
+        AccountNum.Text = $"Account Number: {bankMgr.GetAccountNum()}";
+        CurrentBal.Text = $"Current Balance: ${bankMgr.Getbalance()}";
+
         DisplayDeals();
 	}
 

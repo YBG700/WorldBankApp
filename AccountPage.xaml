@@ -18,24 +18,33 @@
 
         <VerticalStackLayout
             HorizontalOptions="Center"
+            Margin="30"
             Spacing="20">
+
+            <Label
+                x:Name="AccountNum"
+                HorizontalTextAlignment="Center"/>
+
+            <Label
+                x:Name="CurrentBal"
+                HorizontalTextAlignment="Center"/>
 
             <Button
                 Text="Withdraw"
                 Clicked="BtnWithdraw"
-                
+                WidthRequest="250"
                 />
 
             <Button
                 Text="Deposit"
                 Clicked="BtnDeposit"
-           
+                WidthRequest="250"
                 />
 
             <Button
                 Text="Log Out"  
                 Clicked="BtnLogout"
-                
+                WidthRequest="250"
                 />
 
             <Label
