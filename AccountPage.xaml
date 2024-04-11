@@ -38,6 +38,14 @@
                 
                 />
 
+            <Label
+                
+                Text=""
+                FontSize="Body"
+                x:Name="LblDeals"
+                
+                />
+
             <ImageButton 
              Source="point.png"
              WidthRequest="50"

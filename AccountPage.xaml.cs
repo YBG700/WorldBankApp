@@ -5,14 +5,44 @@ namespace WorldBankApp;
 public partial class AccountPage : ContentPage
 {
 	Bank bankMgr;
+    StackLayout DealsLayout;
 
-	public AccountPage(Bank bank)
+    
+
+    public AccountPage(Bank bank)
 	{
 		InitializeComponent();
 		bankMgr = bank;
+        DealsLayout = new StackLayout();
+        DisplayDeals();
 	}
 
-	private async void BtnWithdraw(object sender, EventArgs e) 
+
+    private void DisplayDeals()
+    {
+        var deals = bankMgr.CheckDeals();
+        if (deals != null)
+        {
+            foreach (var deal in deals)
+            {
+
+                LblDeals.Text = $"Deal: {deal.DealName}\nDescription: {deal.DealDesc}\nDuration: {deal.DealLength} months";
+                
+               
+                DealsLayout.Children.Add(LblDeals);
+            }
+        }
+        else
+        {
+
+            LblDeals.Text = "No deals available";
+
+            
+            DealsLayout.Children.Add(LblDeals);
+        }
+    }
+
+    private async void BtnWithdraw(object sender, EventArgs e) 
 	{
 
 
