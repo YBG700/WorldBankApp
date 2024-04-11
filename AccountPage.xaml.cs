@@ -18,6 +18,13 @@ public partial class AccountPage : ContentPage
         AccountNum.Text = $"Account Number: {bankMgr.GetAccountNum()}";
         CurrentBal.Text = $"Current Balance: ${bankMgr.Getbalance()}";
 
+        // Calculates Time difference in terms of days
+        TimeSpan timeDifference = DateTime.Now - bankMgr.GetCreationDate();
+
+        int daysSinceCreation = timeDifference.Days;
+
+        CreationDate.Text = $"Created {daysSinceCreation} Days Ago.";
+
         DisplayDeals();
 	}
 
@@ -32,7 +39,7 @@ public partial class AccountPage : ContentPage
 
                 LblDeals.Text = $"Deal: {deal.DealName}\nDescription: {deal.DealDesc}\nDuration: {deal.DealLength} months";
                 
-               
+                
                 DealsLayout.Children.Add(LblDeals);
             }
         }
