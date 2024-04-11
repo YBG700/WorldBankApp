@@ -16,7 +16,7 @@ public partial class AccountPage : ContentPage
 	{
 
 
-        await Navigation.PushAsync(new Withdraw());
+        await Navigation.PushAsync(new Withdraw(bankMgr));
 
     }
 
