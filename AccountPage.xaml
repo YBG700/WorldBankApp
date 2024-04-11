@@ -29,6 +29,10 @@
                 x:Name="CurrentBal"
                 HorizontalTextAlignment="Center"/>
 
+            <Label
+                x:Name="CreationDate"
+                HorizontalTextAlignment="Center"/>
+
             <Button
                 Text="Withdraw"
                 Clicked="BtnWithdraw"
