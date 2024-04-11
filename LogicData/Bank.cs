@@ -220,6 +220,12 @@ namespace WorldBankApp.LogicData
             return activeAccount.AccNum;
         }
 
+        // Get Creation Date
+        public DateTime GetCreationDate()
+        {
+            return activeAccount.CreationDate;
+        }
+
         // Deposit
         public void Deposit(double deposit)
         {
