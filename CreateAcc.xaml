@@ -40,6 +40,7 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             
             <!-- Left Side -->
@@ -70,7 +71,14 @@
                 Grid.Row="3"
                 HorizontalTextAlignment="End"
                 VerticalTextAlignment="Center"/>
-            
+
+            <Label 
+                Text="Select a Date:"
+                Grid.Column="0"
+                Grid.Row="4"
+                HorizontalTextAlignment="End"
+                VerticalTextAlignment="Center"/>
+
             <!-- Right Side -->
             <Entry
                 Placeholder="Enter your Name"
@@ -103,12 +111,18 @@
                 Grid.Column="1"
                 Grid.Row="3"
                 WidthRequest="200"/>
-            
+
+            <DatePicker 
+                x:Name="datePicker" 
+                Date="{Binding SelectedDate}"
+                Grid.Column="1"
+                Grid.Row="4"/>
+
         </Grid>
 
         <StackLayout
             Spacing="20">
-            
+
             <Button  
                 Text="Submit"
                 x:Name="SubmitBtn"
@@ -121,15 +135,8 @@
                 HeightRequest="50"
                 Clicked="BtnBackClicked"
                 />
-            
-        </StackLayout>
 
-        <StackLayout>
-            <Label Text="Select a Date:" />
-            <DatePicker x:Name="datePicker" 
-                            Date="{Binding SelectedDate}" />
         </StackLayout>
-        
 
     </VerticalStackLayout>
     
