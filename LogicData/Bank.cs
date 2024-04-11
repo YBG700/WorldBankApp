@@ -208,10 +208,16 @@ namespace WorldBankApp.LogicData
             return num;
         }
 
-        // Edit Account
-        public void EditAccount()
+        // Get Balance
+        public double Getbalance()
         {
-            // Either Save all information at the same time, or use switch case to save one entry at a time
+            return activeAccount.CurrBal;
+        }
+
+        // Get Account Number
+        public int GetAccountNum()
+        {
+            return activeAccount.AccNum;
         }
 
         // Deposit
