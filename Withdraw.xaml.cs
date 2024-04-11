@@ -29,15 +29,19 @@ public partial class Withdraw : ContentPage
 
         }
 
-        bankMgr.Withdraw(double.Parse(money));
+        try
+        {
+            bankMgr.Withdraw(double.Parse(money));
 
-        double newAmount = bankMgr.Getbalance();
+            double newAmount = bankMgr.Getbalance();
 
-        MoneyWithdrawl.Text = $"New Balance: ${newAmount}";
-
-
-
-
+            MoneyWithdrawl.Text = $"New Balance: ${newAmount}";
+        }
+        catch (ArgumentException ex)
+        {
+            // Displays Error messages from Bank.cs
+            await DisplayAlert("Warning", ex.Message, "OK");
+        }
     }
 
     private async void BtnBackClicked(object sender, EventArgs e)

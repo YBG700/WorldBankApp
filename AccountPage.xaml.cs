@@ -45,6 +45,12 @@ public partial class AccountPage : ContentPage
             DealsLayout.Children.Add(LblDeals);
         }
     }
+    protected override void OnAppearing()
+    {
+        base.OnAppearing();
+        AccountNum.Text = $"Account Number: {bankMgr.GetAccountNum()}";
+        CurrentBal.Text = $"Current Balance: ${bankMgr.Getbalance()}";
+    }
 
     private async void BtnWithdraw(object sender, EventArgs e) 
 	{
@@ -67,10 +73,5 @@ public partial class AccountPage : ContentPage
 		bankMgr.LogOut();
 		await Navigation.PushAsync(new MainPage());//Return to title Screen
 
-    }
-
-    private async void BtnBackClicked(object sender, EventArgs e)
-    {
-        await Navigation.PopAsync(); // Use PopAsync to navigate back to the previous page
     }
 }

@@ -17,7 +17,7 @@
             VerticalOptions="Center"
             HorizontalOptions="Center"
             x:Name="DepositAmount"
-                          
+            WidthRequest="250"       
             />
 
         <Button

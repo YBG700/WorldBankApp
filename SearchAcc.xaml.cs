@@ -49,7 +49,8 @@ namespace WorldBankApp
 
         public async void OpenAccountPage()
         {
-            await Navigation.PushAsync(new AccountPage(bankMgr));
+            await Navigation.PopToRootAsync(); // Navigate to the first page aka MainPage, Removing this page in the process
+            await Navigation.PushAsync(new AccountPage(bankMgr)); // Navigate to the AccountPage
         }
     }
 }

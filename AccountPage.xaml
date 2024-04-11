@@ -48,22 +48,15 @@
                 />
 
             <Label
+                Text="Available Deals:"/>
+
+            <Label
                 
                 Text=""
                 FontSize="Body"
                 x:Name="LblDeals"
                 
                 />
-
-            <ImageButton 
-                Source="point.png"
-                WidthRequest="50"
-                HeightRequest="50"
-                Clicked="BtnBackClicked"
-     
-                />
-
-
 
         </VerticalStackLayout>
 

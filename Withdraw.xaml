@@ -18,7 +18,7 @@
          VerticalOptions="Center"
          HorizontalOptions="Center"
          x:Name="WithdrawAmount"
-                   
+         WidthRequest="250" 
         />
 
         <Button
