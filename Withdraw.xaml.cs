@@ -31,7 +31,9 @@ public partial class Withdraw : ContentPage
 
         bankMgr.Withdraw(double.Parse(money));
 
-        MoneyWithdrawl.Text = $"New Amount: {money}";
+        double newAmount = bankMgr.Getbalance();
+
+        MoneyWithdrawl.Text = $"New Amount: {newAmount}";
 
 
 
