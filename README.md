@@ -76,15 +76,9 @@ Open the solution in Visual Studio and run on your preferred platform.
 
 ---
 
-## License
-
-This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
-
----
-
 ## Contact
 
-For support or inquiries, please contact [your.email@example.com].
+For support or inquiries, please contact [obasekigabriel700@gmail.com].
 
 ---
 
